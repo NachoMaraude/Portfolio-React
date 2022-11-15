@@ -1,8 +1,10 @@
+import resume from "../resume.pdf";
+
 export default function Contact() {
     return (
         <div
             id="contact"
-            className=" gap-10 mt-40 w-full items-center justify-center"
+            className="pt-20 gap-10 mt-40 w-full items-center justify-center"
         >
             <h1 className="text-8xl font-bold text-center text-[#90a0d9]">
                 Contact Me
@@ -24,6 +26,14 @@ export default function Contact() {
                         alt="github"
                         className="w-20 h-20 hover:w-24 hover:h-24"
                     />
+                </a>
+                <a
+                    href={resume}
+                    download="Juan Ignacio Maraude - Resume"
+                    target="_blank"
+                    className="text-[#90a0d9] text-2xl bg-[#475569] text-center rounded-full w-52"
+                >
+                    Download resume
                 </a>
             </div>
         </div>

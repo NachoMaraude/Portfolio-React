@@ -2,7 +2,7 @@ import image from "../images/descarga2.png";
 
 export default function Home() {
     return (
-        <div id="about" className="w-full h-full  text-[#90a0d9] mt-4">
+        <div id="about" className="w-full h-full mt-20 pt-20 text-[#90a0d9]">
             <h1 className="font-bold text-8xl m-6 ml-40 text-left">
                 Hi! I am Juan Ignacio
             </h1>
@@ -13,7 +13,7 @@ export default function Home() {
                 <div className="flex-row ml-10">
                     <img
                         src={image}
-                        className="h-80 w-72 rounded-full"
+                        className="h-80 w-72 rounded-full "
                         alt=""
                     />
                 </div>

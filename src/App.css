@@ -1,0 +1,5 @@
+.active {
+    border-bottom: 3px solid #202438;
+    border-right: 3px solid #202438;
+    /* border-radius: 100%; */
+}
