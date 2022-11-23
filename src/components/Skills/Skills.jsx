@@ -11,7 +11,7 @@ export default function Skills() {
                     content="CSS"
                     className="text-[#90a0d9] bg-[#202438] border-2 border-[#202438] rounded-full text-xl"
                 >
-                    <div className="rounded-full flex w-24 h-24 justify-center bg-[#90a0d9] ">
+                    <div className="rounded-full flex w-[6%] h-24 justify-center bg-[#90a0d9] ">
                         <img
                             src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg"
                             alt="css3"
@@ -24,7 +24,7 @@ export default function Skills() {
                     content="Express"
                     className="text-[#90a0d9] bg-[#202438] border-2 border-[#202438] rounded-full text-xl"
                 >
-                    <div className="rounded-full flex w-24 h-24 justify-center bg-[#90a0d9] ">
+                    <div className="rounded-full flex w-[6%] h-24 justify-center bg-[#90a0d9] ">
                         <img
                             src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg"
                             alt="express"
@@ -37,7 +37,7 @@ export default function Skills() {
                     content="Git"
                     className="text-[#90a0d9] bg-[#202438] border-2 border-[#202438] rounded-full text-xl"
                 >
-                    <div className="rounded-full flex w-24 h-24 justify-center bg-[#90a0d9] ">
+                    <div className="rounded-full flex w-[6%] h-24 justify-center bg-[#90a0d9] ">
                         <img
                             src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg"
                             alt="git"
@@ -50,7 +50,7 @@ export default function Skills() {
                     content="HTML"
                     className="text-[#90a0d9] bg-[#202438] border-2 border-[#202438] rounded-full text-xl"
                 >
-                    <div className="rounded-full flex w-24 h-24 justify-center bg-[#90a0d9] ">
+                    <div className="rounded-full flex w-[6%] h-24 justify-center bg-[#90a0d9] ">
                         <img
                             src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg"
                             alt="html5"
@@ -63,7 +63,7 @@ export default function Skills() {
                     content="JavaScript"
                     className="text-[#90a0d9] bg-[#202438] border-2 border-[#202438] rounded-full text-xl"
                 >
-                    <div className="rounded-full flex w-24 h-24 justify-center bg-[#90a0d9] ">
+                    <div className="rounded-full flex w-[6%] h-24 justify-center bg-[#90a0d9] ">
                         <img
                             src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
                             alt="javascript"
@@ -76,7 +76,7 @@ export default function Skills() {
                     content="NodeJS "
                     className="text-[#90a0d9] bg-[#202438] border-2 border-[#202438] rounded-full text-xl"
                 >
-                    <div className="rounded-full flex w-24 h-24 justify-center bg-[#90a0d9] ">
+                    <div className="rounded-full flex w-[6%] h-24 justify-center bg-[#90a0d9] ">
                         <img
                             src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg"
                             alt="nodejs"
@@ -89,7 +89,7 @@ export default function Skills() {
                     content="PostgreSQL"
                     className="text-[#90a0d9] bg-[#202438] border-2 border-[#202438] rounded-full text-xl"
                 >
-                    <div className="rounded-full flex w-24 h-24 justify-center bg-[#90a0d9] ">
+                    <div className="rounded-full flex w-[6%] h-24 justify-center bg-[#90a0d9] ">
                         <img
                             src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg"
                             alt="postgresql"
@@ -102,7 +102,7 @@ export default function Skills() {
                     content="React"
                     className="text-[#90a0d9] bg-[#202438] border-2 border-[#202438] rounded-full text-xl"
                 >
-                    <div className="rounded-full flex w-24 h-24 justify-center bg-[#90a0d9] ">
+                    <div className="rounded-full flex w-[6%] h-24 justify-center bg-[#90a0d9] ">
                         <img
                             src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg"
                             alt="react"
@@ -115,7 +115,7 @@ export default function Skills() {
                     content="Redux"
                     className="text-[#90a0d9] bg-[#202438] border-2 border-[#202438] rounded-full text-xl"
                 >
-                    <div className="rounded-full flex w-24 h-24 justify-center bg-[#90a0d9] ">
+                    <div className="rounded-full flex w-[6%] h-24 justify-center bg-[#90a0d9] ">
                         <img
                             src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg"
                             alt="redux"
@@ -128,7 +128,7 @@ export default function Skills() {
                     content="Tailwind"
                     className="text-[#90a0d9] bg-[#202438] border-2 border-[#202438] rounded-full text-xl"
                 >
-                    <div className="rounded-full flex w-24 h-24 justify-center bg-[#90a0d9] ">
+                    <div className="rounded-full flex w-[6%] h-24 justify-center bg-[#90a0d9] ">
                         <img
                             src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg"
                             alt="tailwind"

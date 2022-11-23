@@ -5,8 +5,8 @@
 body {
     /* background-color: #e7ecef; CLARO */
     background-color: #23283e; /*DARK*/
-    height: 500vh;
     margin: 0;
+    height: 100%;
     /* width: 100vw;
     height: 100vh;
     display: flex;
@@ -20,4 +20,24 @@ body {
 
 html {
     scroll-behavior: smooth;
+}
+
+:root {
+    --secondary: #90a0d9;
+    --primary: #23283e;
+}
+
+*::-webkit-scrollbar {
+    width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--primary);
+    border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--secondary);
+    border-radius: 14px;
+    border: 3px solid var(--primary);
 }
