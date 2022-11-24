@@ -41,7 +41,13 @@ export default function Projects() {
                         <h2 className="card-title text-3xl justify-center">
                             Videogames APP
                         </h2>
-                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <p className="text-2xl mt-[2%]">
+                            Henry Videogames is a web application that allows
+                            the user to visualize video games using the Rawg
+                            API, as well as their details (description, release
+                            date, genres, and platforms) and offers the
+                            possibility to add your own video games.
+                        </p>
                     </div>
 
                     <figure className="m-5 rounded-2xl">
@@ -72,13 +78,13 @@ export default function Projects() {
                     <div className="flex justify-around ">
                         <div>
                             <a
-                                href="https://foodify-ten.vercel.app/"
+                                href="https://pi-videogames-front-weld.vercel.app/"
                                 target="_blank"
                             >
                                 <img
-                                    src="https://foodify-ten.vercel.app/static/media/LogoMain.11bfbccadf5b1918e001.png"
-                                    alt="foodify"
-                                    className="h-24 w-24  rounded-full bg-slate-50 mb-5"
+                                    src="https://github.com/NachoMaraude/PI-Videogames/blob/main/client/src/Images/EQUIS.jpg?raw=true"
+                                    alt="PI-Videogames"
+                                    className="h-24 w-24  rounded-full bg-slate-800 mb-5"
                                 />
                             </a>
                         </div>
@@ -101,7 +107,12 @@ export default function Projects() {
                         <h2 className="card-title text-3xl justify-center">
                             Foodify
                         </h2>
-                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <p className="text-2xl mt-[2%]">
+                            Web application created to help restaurants to
+                            organize their tables, metrics, employees, and menu.
+                            I worked in the Frontend part of the team, where we
+                            used React.
+                        </p>
                     </div>
 
                     <figure className="m-5 rounded-2xl">
