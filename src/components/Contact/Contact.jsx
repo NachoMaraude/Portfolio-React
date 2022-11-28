@@ -4,7 +4,7 @@ export default function Contact() {
     return (
         <div
             id="contact"
-            className="pt-20 gap-10 mt-40 w-full items-center justify-center h-[100vh]"
+            className="pt-[5%] mt-[10%]  w-full items-center justify-center h-[100vh]"
         >
             <h1 className="text-8xl font-bold text-center text-[#90a0d9]">
                 Contact Me
@@ -31,7 +31,7 @@ export default function Contact() {
                     <img
                         src="https://cdn-icons-png.flaticon.com/512/5968/5968534.png"
                         alt="github"
-                        className="w-20 h-20 hover:w-24 hover:h-24 "
+                        className="w-24 h-24 hover:w-28 hover:h-28 "
                     />
                 </a>
                 <a

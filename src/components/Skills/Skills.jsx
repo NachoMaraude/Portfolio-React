@@ -2,7 +2,7 @@ import { Tooltip } from "@material-tailwind/react";
 
 export default function Skills() {
     return (
-        <div id="skills" className=" w-full h-full pt-20 mt-40 ">
+        <div id="skills" className=" w-full h-full pt-[5%] mt-[10%] ">
             <h1 className="text-8xl text-center font-bold text-[#90a0d9]">
                 Skills
             </h1>

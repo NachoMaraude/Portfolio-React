@@ -1,4 +1,4 @@
-import Home from "./components/Home/Home";
+import About from "./components/About/About";
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
 import Skills from "./components/Skills/Skills";
@@ -15,7 +15,15 @@ function App() {
                 style={{ backgroundColor: "#475569" }}
             />
             <NavBar />
-            <Home />
+            <div className="w-full h-full mt-[3%] pt-[7%] text-[#90a0d9]">
+                <h1 className="font-bold text-8xl m-[1%] ml-[9%] text-left">
+                    Hi! I am Juan Ignacio
+                </h1>
+                <h2 className="italic text-7xl w-[80%] m-[1.5%] ml-[9%] text-right">
+                    Full Stack Web Developer & Web Designer
+                </h2>
+            </div>
+            <About />
             <Skills />
             <Projects />
             <Contact />
