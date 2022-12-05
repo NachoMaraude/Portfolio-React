@@ -1,6 +1,8 @@
 import image from "../images/descarga2.png";
+import { useTranslation } from "react-i18next";
 
 export default function About() {
+    const [t] = useTranslation("global");
     return (
         <div
             id="about"
@@ -11,12 +13,7 @@ export default function About() {
             </div>
             <div className="flex-row w-[80%] ml-[5.5%] m-[1%]">
                 <p className="text-4xl items-end justify-center mt-[2.5%] font-sans">
-                    I'm curious, I enjoy fixing bugs and I'm always learning new
-                    technologies to increase my knowledge. Recently, I learned
-                    agile methodologies like scrum and I learned tools like
-                    Redux Toolkit and Tailwind while working on my final project
-                    in Soy Henry Bootcamp with 6 teammates. I hope overpass new
-                    challenges and grow as Software Developer.
+                    {t("about.p")}
                 </p>
             </div>
         </div>

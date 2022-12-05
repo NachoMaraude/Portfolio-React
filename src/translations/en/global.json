@@ -1,0 +1,27 @@
+{
+    "navBar": {
+        "about": "About Me",
+        "skills": "Skills",
+        "projects": "Projects",
+        "contact": "Contact Me"
+    },
+    "title": {
+        "h1": "Hi! I am Juan Ignacio",
+        "h2": "Full Stack Web Developer & Web Designer"
+    },
+    "about": {
+        "p": "I'm curious and decisive, I enjoy fixing bugs, I'm always learning new technologies to increase my knowledge, and I love programming. I stand out for learning very fast, in a self-taught way, which makes it easier for me to cope with new challenges."
+    },
+    "skills": {
+        "h1": "Skills"
+    },
+    "projects": {
+        "h1": "Projects",
+        "piDescription": "Henry Videogames is a web application that allows the user to visualize video games using the Rawg API, as well as their details (description, release date, genres, and platforms) and offers the possibility to add your own video games.",
+        "foodifyDescription": "Web application created to help restaurants to organize their tables, metrics, employees, and menu. I worked in the Frontend part of the team, where we used React."
+    },
+    "contact": {
+        "h1": "Contact Me",
+        "resume": "Download Resume"
+    }
+}

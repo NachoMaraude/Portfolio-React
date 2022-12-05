@@ -1,0 +1,27 @@
+{
+    "navBar": {
+        "about": "Sobre Mí",
+        "skills": "Habilidades",
+        "projects": "Proyectos",
+        "contact": "Contáctame"
+    },
+    "title": {
+        "h1": "Hola! Soy Juan Ignacio",
+        "h2": "Programador Web Full Stack y Diseñador Web"
+    },
+    "about": {
+        "p": "Soy curioso, decisivo, disfruto arreglando bugs, siempre estoy aprendiendo nuevas tecnologías para aumentar mis conocimientos y amo programar. Me destaco por aprender muy rapido, de forma autodidacta, lo que me facilita desenvolverme frente a nuevos desafíos "
+    },
+    "skills": {
+        "h1": "Habilidades"
+    },
+    "projects": {
+        "h1": "Proyectos",
+        "piDescription": "Henry Videogames es una aplicación web que permite al usuario visualizar videojuegos utilizando la API Rawg, así como sus detalles (descripción, fecha de lanzamiento, géneros y plataformas) y ofrece la posibilidad de añadir tus propios videojuegos.",
+        "foodifyDescription": "Aplicación web creada para ayudar a los restaurantes a organizar sus mesas, métricas, empleados y menú. Trabajé en la parte Frontend del equipo, donde utilizamos React."
+    },
+    "contact": {
+        "h1": "Contáctame",
+        "resume": "Descargar CV"
+    }
+}

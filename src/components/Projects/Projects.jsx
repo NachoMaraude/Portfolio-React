@@ -7,49 +7,28 @@ import twoPi from "../images/pi/two.png";
 import threePi from "../images/pi/three.png";
 import fourPi from "../images/pi/four.png";
 import fivePi from "../images/pi/five.png";
-
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
+import { useTranslation } from "react-i18next";
 
 export default function Projects() {
+    const [t] = useTranslation("global");
     return (
         <div
             id="projects"
-            className="w-full h-full  text-[#90a0d9] pt-[5%] mt-[10%]"
+            className="w-full h-full  text-[#90a0d9] pt-[5%] mt-[9%]"
         >
-            <h1 className="font-bold text-8xl m-6  text-center">Projects</h1>
+            <h1 className="font-bold text-8xl m-6  text-center">
+                {t("projects.h1")}
+            </h1>
             <div className="flex gap-8 justify-center text-4xl mt-20">
-                {/* <div className="flex-row text-start">
-                    <a
-                        href="https://github.com/NachoMaraude/PI-Videogames"
-                        target="_blank"
-                    >
-                        PI VIDEOGAMES
-                    </a>
-                </div> */}
-                {/* <div className="flex-row ml-32">
-                    <a
-                        href="https://github.com/NachoMaraude/Foodify"
-                        target="_blank"
-                        className="text-center"
-                    >
-                        Foodify
-                    </a>
-                    <figure>
-                        <img src={one} alt="foodify" className="w-[40%]" />
-                    </figure>
-                </div> */}
                 <div className="card w-[40vw] bg-slate-600  shadow-xl">
                     <div className="card-body">
                         <h2 className="card-title text-3xl justify-center">
                             Videogames APP
                         </h2>
                         <p className="text-2xl mt-[2%]">
-                            Henry Videogames is a web application that allows
-                            the user to visualize video games using the Rawg
-                            API, as well as their details (description, release
-                            date, genres, and platforms) and offers the
-                            possibility to add your own video games.
+                            {t("projects.piDescription")}
                         </p>
                     </div>
 
@@ -111,10 +90,7 @@ export default function Projects() {
                             Foodify
                         </h2>
                         <p className="text-2xl mt-[2%]">
-                            Web application created to help restaurants to
-                            organize their tables, metrics, employees, and menu.
-                            I worked in the Frontend part of the team, where we
-                            used React.
+                            {t("projects.foodifyDescription")}
                         </p>
                     </div>
 

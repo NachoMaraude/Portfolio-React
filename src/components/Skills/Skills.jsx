@@ -1,10 +1,12 @@
 import { Tooltip } from "@material-tailwind/react";
+import { useTranslation } from "react-i18next";
 
 export default function Skills() {
+    const [t] = useTranslation("global");
     return (
-        <div id="skills" className=" w-full h-full pt-[5%] mt-[10%] ">
+        <div id="skills" className=" w-full h-full pt-[5%] mt-[7%] ">
             <h1 className="text-8xl text-center font-bold text-[#90a0d9]">
-                Skills
+                {t("skills.h1")}
             </h1>
             <div className="flex items-center justify-around gap-8 m-10 mt-20 ">
                 <Tooltip
