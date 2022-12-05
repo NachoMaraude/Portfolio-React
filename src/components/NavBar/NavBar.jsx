@@ -47,7 +47,7 @@ export default function NavBar() {
             </Link>
             <select
                 onChange={(e) => i18n.changeLanguage(e.target.value)}
-                className="text-2xl bg-slate-600 "
+                className="text-2xl bg-slate-600 text-center m-8 w-40 "
             >
                 <option value="en">English</option>
                 <option value="es">Español</option>

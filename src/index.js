@@ -8,6 +8,8 @@ import i18next from "i18next";
 import global_en from "./translations/en/global.json";
 import global_es from "./translations/es/global.json";
 
+import { ThemeProvider } from "@material-tailwind/react";
+
 i18next.init({
     interpolation: { escapeValue: false },
     lng: "en",
@@ -24,9 +26,11 @@ i18next.init({
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <React.StrictMode>
-        <I18nextProvider i18n={i18next}>
-            <App />
-        </I18nextProvider>
+        <ThemeProvider>
+            <I18nextProvider i18n={i18next}>
+                <App />
+            </I18nextProvider>
+        </ThemeProvider>
     </React.StrictMode>
 );
 
