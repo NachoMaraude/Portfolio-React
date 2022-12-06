@@ -23,8 +23,8 @@ html {
 }
 
 :root {
-    --secondary: #90a0d9;
     --primary: #23283e;
+    --secondary: #90a0d9;
 }
 
 *::-webkit-scrollbar {
