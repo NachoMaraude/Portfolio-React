@@ -139,6 +139,19 @@ export default function Skills() {
                         />
                     </div>
                 </Tooltip>
+                <Tooltip
+                    content="MongoDB"
+                    className="text-[#90a0d9] bg-[#202438] border-2 border-[#202438] rounded-full text-xl"
+                >
+                    <div className="rounded-full flex w-[6%] h-24 justify-center bg-[#90a0d9] ">
+                        <img
+                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg"
+                            alt="mongodb"
+                            width="80%"
+                            height="80%"
+                        />
+                    </div>
+                </Tooltip>
             </div>
         </div>
     );
