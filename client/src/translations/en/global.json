@@ -25,6 +25,15 @@
         "resume": "Download Resume",
         "subject": "Subject",
         "body": "Body",
-        "send": "Send"
+        "send": "Send",
+        "swalTitle": "Submited successfully!",
+        "errorRequired": "This field is required",
+        "errorEmail": "Enter a valid email",
+        "minLengthEmail": "This field must be at least 5 characters",
+        "maxLengthEmail": "This field must be most at 50 characters",
+        "minLengthSubject": "This field must be at least 2 characters",
+        "maxLengthSubject": "This field must be most at 25 characters",
+        "minLengthBody": "This field must be at least 10 characters",
+        "maxLengthBody": "This field must be most at 300 characters"
     }
 }

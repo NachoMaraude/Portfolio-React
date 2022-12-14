@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { postEmail } from "../../redux/actions/nodemailerAction";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
+import swal from "sweetalert2";
 
 export default function Contact() {
     const [t] = useTranslation("global");
@@ -19,7 +20,12 @@ export default function Contact() {
 
     const onSubmit = (data) => {
         dispatch(postEmail(data));
-        console.log(data);
+        swal.fire({
+            title: t("contact.swalTitle"),
+            text: "",
+            icon: "success",
+            allowEscapeKey: true,
+        });
     };
 
     useEffect(() => {
@@ -35,7 +41,7 @@ export default function Contact() {
     return (
         <div
             id="contact"
-            className="pt-[5%] mt-[10%]  w-full items-center justify-center h-[100vh]"
+            className="pt-[5%] mt-[10%]  w-full items-center justify-center h-[110vh]"
         >
             <h1 className="text-8xl font-bold text-center text-[#90a0d9]">
                 {t("contact.h1")}
@@ -75,9 +81,28 @@ export default function Contact() {
                 </a>
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="flex flex-col h-[60vh]">
+                <div className="flex flex-col h-[60vh] border-2 border-[#90a0d9] mt-20 rounded-lg w-[40%] ml-[30%]  bg-[#475569]">
+                    {errors?.email && errors.email.type === "required" ? (
+                        <p className=" text-start text-sm text-[#90a0d9] w-[60%] ml-[20%] pl-4 h-8 pt-4">
+                            {t("contact.errorRequired")}
+                        </p>
+                    ) : errors?.email?.type === "pattern" ? (
+                        <p className="text-start text-sm text-[#90a0d9] w-[60%] ml-[20%] pl-4 h-8 pt-4">
+                            {t("contact.errorEmail")}
+                        </p>
+                    ) : errors?.email?.type === "minLength" ? (
+                        <p className="text-start text-sm text-[#90a0d9] w-[60%] ml-[20%] pl-4 h-8 pt-4">
+                            {t("contact.minLengthEmail")}
+                        </p>
+                    ) : errors?.email?.type === "maxLength" ? (
+                        <p className="text-start text-sm text-[#90a0d9] w-[60%] ml-[20%] pl-4 h-8 pt-4">
+                            {t("contact.maxLengthEmail")}
+                        </p>
+                    ) : (
+                        <br />
+                    )}
                     <input
-                        className="bg-[#475569] border-2 border-[#90a0d9] rounded-xl text-xl text-[#23283e] placeholder:text-[#23283e] justify-center text-center w-[30%] ml-[35%] mt-[5%] h-10"
+                        className="bg-[#475569] border-2 border-[#90a0d9] rounded-xl text-xl text-[#23283e] placeholder:text-[#23283e]  text-start pl-3 w-[60%] ml-[20%] m-4 h-12"
                         type="text"
                         placeholder="Email"
                         {...register("email", {
@@ -85,11 +110,26 @@ export default function Contact() {
                                 /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
                             required: true,
                             minLength: 5,
+                            maxLength: 50,
                         })}
                     />
-                    <br />
+                    {errors?.subject && errors.subject.type === "required" ? (
+                        <p className="  text-start text-sm text-[#90a0d9] w-[60%] ml-[20%] pl-4 h-8 pt-4">
+                            {t("contact.errorRequired")}
+                        </p>
+                    ) : errors?.subject?.type === "minLength" ? (
+                        <p className=" text-start text-sm text-[#90a0d9] w-[60%] ml-[20%] pl-4 h-8 pt-4">
+                            {t("contact.minLengthSubject")}
+                        </p>
+                    ) : errors?.subject?.type === "maxLength" ? (
+                        <p className=" text-start text-sm text-[#90a0d9] w-[60%] ml-[20%] pl-4 h-8 pt-4">
+                            {t("contact.maxLengthSubject")}
+                        </p>
+                    ) : (
+                        <br />
+                    )}
                     <input
-                        className="bg-[#475569] border-2 border-[#90a0d9] rounded-xl text-xl text-[#23283e] placeholder:text-[#23283e] text-center w-[30%] ml-[35%] h-10 m-4"
+                        className="bg-[#475569] border-2 border-[#90a0d9] rounded-xl text-xl text-[#23283e] placeholder:text-[#23283e] text-start pl-3 w-[60%] ml-[20%] h-12 m-4"
                         type="text"
                         placeholder={t("contact.subject")}
                         {...register("subject", {
@@ -98,9 +138,24 @@ export default function Contact() {
                             maxLength: 25,
                         })}
                     />
-                    <br />
+                    {errors?.body && errors.body.type === "required" ? (
+                        <p className=" text-start text-sm text-[#90a0d9] w-[60%] ml-[20%] pl-4 h-8 pt-4">
+                            {t("contact.errorRequired")}
+                        </p>
+                    ) : errors?.body?.type === "minLength" ? (
+                        <p className="text-start text-sm text-[#90a0d9] w-[60%] ml-[20%] pl-4 h-8 pt-4">
+                            {t("contact.minLengthBody")}
+                        </p>
+                    ) : errors?.body?.type === "maxLength" ? (
+                        <p className="text-start text-sm text-[#90a0d9] w-[60%] ml-[20%] pl-4 h-8 pt-4">
+                            {t("contact.minLengthBody")}
+                        </p>
+                    ) : (
+                        <p></p>
+                    )}
+
                     <textarea
-                        className="bg-[#475569] border-2 border-[#90a0d9] rounded-xl text-center text-2xl text-[#23283e] placeholder:text-[#23283e] w-[30%] ml-[35%] h-40"
+                        className="bg-[#475569] border-2 border-[#90a0d9] rounded-xl text-start pl-3 text-2xl text-[#23283e] placeholder:text-[#23283e] w-[60%] ml-[20%] m-4 h-48 resize-none"
                         type="text"
                         placeholder={t("contact.body")}
                         {...register("body", {
@@ -109,7 +164,7 @@ export default function Contact() {
                             maxLength: 300,
                         })}
                     />
-                    <button className="h-8 bg-[#475569] border-2 border-[#90a0d9] rounded-full hover:bg-[#90a0d9] text-center text-xl text-[#23283e]  w-[10%] ml-[55%] m-3">
+                    <button className="h-8 bg-[#475569] border-2 border-[#90a0d9] rounded-full hover:bg-[#90a0d9] text-center text-xl text-[#23283e]  w-[10%] ml-[70%] m-4">
                         {t("contact.send")}
                     </button>
                 </div>

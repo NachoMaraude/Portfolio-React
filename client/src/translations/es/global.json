@@ -25,6 +25,15 @@
         "resume": "Descargar CV",
         "subject": "Asunto",
         "body": "Cuerpo",
-        "send": "Enviar"
+        "send": "Enviar",
+        "swalTitle": "Enviado correctamente!",
+        "errorRequired": "Este campo es obligatorio",
+        "errorEmail": "Ingrese un email válido",
+        "minLengthEmail": "El mínimo de caracteres es 5",
+        "maxLengthEmail": "El máximo de caracteres es 50",
+        "minLengthSubject": "El mínimo de caracteres es 2",
+        "maxLengthSubject": "El máximo de caracteres es 25",
+        "minLengthBody": "El mínimo de caracteres es 10",
+        "maxLengthBody": "El máximo de caracteres es 300"
     }
 }
