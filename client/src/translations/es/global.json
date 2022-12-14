@@ -22,6 +22,9 @@
     },
     "contact": {
         "h1": "Contáctame",
-        "resume": "Descargar CV"
+        "resume": "Descargar CV",
+        "subject": "Asunto",
+        "body": "Cuerpo",
+        "send": "Enviar"
     }
 }

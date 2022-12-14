@@ -91,7 +91,7 @@ export default function Contact() {
                     <input
                         className="bg-[#475569] border-2 border-[#90a0d9] rounded-xl text-xl text-[#23283e] placeholder:text-[#23283e] text-center w-[30%] ml-[35%] h-10 m-4"
                         type="text"
-                        placeholder="Subject"
+                        placeholder={t("contact.subject")}
                         {...register("subject", {
                             required: true,
                             minLength: 2,
@@ -102,7 +102,7 @@ export default function Contact() {
                     <textarea
                         className="bg-[#475569] border-2 border-[#90a0d9] rounded-xl text-center text-2xl text-[#23283e] placeholder:text-[#23283e] w-[30%] ml-[35%] h-40"
                         type="text"
-                        placeholder="Body"
+                        placeholder={t("contact.body")}
                         {...register("body", {
                             required: true,
                             minLength: 10,
@@ -110,7 +110,7 @@ export default function Contact() {
                         })}
                     />
                     <button className="h-8 bg-[#475569] border-2 border-[#90a0d9] rounded-full hover:bg-[#90a0d9] text-center text-xl text-[#23283e]  w-[10%] ml-[55%] m-3">
-                        Send
+                        {t("contact.send")}
                     </button>
                 </div>
             </form>
