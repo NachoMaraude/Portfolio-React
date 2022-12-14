@@ -151,7 +151,7 @@ export default function Contact() {
                             {t("contact.minLengthBody")}
                         </p>
                     ) : (
-                        <p></p>
+                        <br />
                     )}
 
                     <textarea
