@@ -1,8 +1,37 @@
 import resume from "../resume.pdf";
 import { useTranslation } from "react-i18next";
+import { useForm } from "react-hook-form";
+import { postEmail } from "../../redux/actions/nodemailerAction";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 
 export default function Contact() {
     const [t] = useTranslation("global");
+    const dispatch = useDispatch();
+
+    const {
+        handleSubmit,
+        register,
+        formState,
+        formState: { errors },
+        reset,
+    } = useForm();
+
+    const onSubmit = (data) => {
+        dispatch(postEmail(data));
+        console.log(data);
+    };
+
+    useEffect(() => {
+        if (formState.isSubmitSuccessful) {
+            reset({
+                email: "",
+                subject: "",
+                body: "",
+            });
+        }
+    }, [formState, reset]);
+
     return (
         <div
             id="contact"
@@ -45,6 +74,46 @@ export default function Contact() {
                     {t("contact.resume")}
                 </a>
             </div>
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <div className="flex flex-col h-[60vh]">
+                    <input
+                        className="bg-[#475569] border-2 border-[#90a0d9] rounded-xl text-xl text-[#23283e] placeholder:text-[#23283e] justify-center text-center w-[30%] ml-[35%] mt-[5%] h-10"
+                        type="text"
+                        placeholder="Email"
+                        {...register("email", {
+                            pattern:
+                                /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
+                            required: true,
+                            minLength: 5,
+                        })}
+                    />
+                    <br />
+                    <input
+                        className="bg-[#475569] border-2 border-[#90a0d9] rounded-xl text-xl text-[#23283e] placeholder:text-[#23283e] text-center w-[30%] ml-[35%] h-10 m-4"
+                        type="text"
+                        placeholder="Subject"
+                        {...register("subject", {
+                            required: true,
+                            minLength: 2,
+                            maxLength: 25,
+                        })}
+                    />
+                    <br />
+                    <textarea
+                        className="bg-[#475569] border-2 border-[#90a0d9] rounded-xl text-center text-2xl text-[#23283e] placeholder:text-[#23283e] w-[30%] ml-[35%] h-40"
+                        type="text"
+                        placeholder="Body"
+                        {...register("body", {
+                            required: true,
+                            minLength: 10,
+                            maxLength: 300,
+                        })}
+                    />
+                    <button className="h-8 bg-[#475569] border-2 border-[#90a0d9] rounded-full hover:bg-[#90a0d9] text-center text-xl text-[#23283e]  w-[10%] ml-[55%] m-3">
+                        Send
+                    </button>
+                </div>
+            </form>
         </div>
     );
 }
