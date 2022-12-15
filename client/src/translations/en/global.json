@@ -24,7 +24,7 @@
         "h1": "Contact Me",
         "resume": "Download Resume",
         "subject": "Subject",
-        "body": "Body",
+        "body": "Leave your message here...",
         "send": "Send",
         "swalTitle": "Submited successfully!",
         "errorRequired": "This field is required",
