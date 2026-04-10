@@ -1,39 +1,51 @@
 {
-    "navBar": {
-        "about": "Sobre Mí",
-        "skills": "Habilidades",
-        "projects": "Proyectos",
-        "contact": "Contáctame"
-    },
-    "title": {
-        "h1": "Hola! Soy Juan Ignacio",
-        "h2": "Desarrollador Web Full Stack y Diseñador Web"
-    },
-    "about": {
-        "p": "Soy un desarrollador full stack con enfoque en el front-end, he tenido la posibilidad de trabajar en industrias del sector eCommerce y alimentos, donde utilicé distintas tecnologías que aprendí de manera autónoma, me apasiona todo lo relacionado con interfaz y experiencia de usuario. Me gusta proveerle a las compañias proyectos escalables con los que puedan generar engagement para sus clientes. Gracias a mi experiencia en proyectos he desarrollado habilidades como la creatividad, capacidad para la resolución de problemas, comunicación asertiva, que me ha permitido desenvolverme de manera apropiada en espacios colaborativos de trabajo, y en proyectos individuales. Estoy interesado en seguirme desarrollando profesionalmente en la industria tech, particularmente como desarrollador web."
-    },
-    "skills": {
-        "h1": "Habilidades"
-    },
-    "projects": {
-        "h1": "Proyectos",
-        "piDescription": "Henry Videogames es una aplicación web que permite al usuario visualizar videojuegos utilizando la API Rawg, así como sus detalles (descripción, fecha de lanzamiento, géneros y plataformas) y ofrece la posibilidad de añadir tus propios videojuegos.",
-        "foodifyDescription": "Aplicación web creada para ayudar a los restaurantes a organizar sus mesas, métricas, empleados y menú. Trabajé en la parte Frontend del equipo, donde utilizamos React."
-    },
-    "contact": {
-        "h1": "Contáctame",
-        "resume": "Descargar CV",
-        "subject": "Asunto",
-        "body": "Deje su mensaje aquí...",
-        "send": "Enviar",
-        "swalTitle": "Enviado correctamente!",
-        "errorRequired": "Este campo es obligatorio",
-        "errorEmail": "Ingrese un email válido",
-        "minLengthEmail": "El mínimo de caracteres es 5",
-        "maxLengthEmail": "El máximo de caracteres es 50",
-        "minLengthSubject": "El mínimo de caracteres es 2",
-        "maxLengthSubject": "El máximo de caracteres es 25",
-        "minLengthBody": "El mínimo de caracteres es 10",
-        "maxLengthBody": "El máximo de caracteres es 300"
-    }
+  "navBar": {
+    "about": "Sobre Mí",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "contact": "Contáctame"
+  },
+  "title": {
+    "h1": "Hola! Soy Juan Ignacio",
+    "h2": "Desarrollador Web Full Stack y Diseñador Web",
+    "cta": "Ver Proyectos",
+    "contactBtn": "Contáctame"
+  },
+  "about": {
+    "label": "Sobre Mí",
+    "heading": "Desarrollador Full Stack apasionado por el Frontend",
+    "p": "Soy un desarrollador full stack con enfoque en el front-end, egresado del bootcamp intensivo de Henry, y actualmente cursando Ingeniería Informática. He tenido la posibilidad de trabajar en industrias del sector eCommerce y alimentos, donde utilicé distintas tecnologías que aprendí de manera autónoma. Me apasiona todo lo relacionado con interfaz y experiencia de usuario, y me gusta proveerle a las compañías proyectos escalables con los que puedan generar engagement para sus clientes. Gracias a mi experiencia he desarrollado habilidades como la creatividad, resolución de problemas y comunicación asertiva, que me permiten desenvolverme tanto en equipos colaborativos como en proyectos individuales."
+  },
+  "skills": {
+    "h1": "Habilidades",
+    "label": "Stack"
+  },
+  "projects": {
+    "h1": "Proyectos",
+    "label": "Proyectos destacados",
+    "piDescription": "Henry Videogames es una aplicación web que permite al usuario visualizar videojuegos utilizando la API Rawg, así como sus detalles (descripción, fecha de lanzamiento, géneros y plataformas) y ofrece la posibilidad de añadir tus propios videojuegos.",
+    "foodifyDescription": "Aplicación web creada para ayudar a los restaurantes a organizar sus mesas, métricas, empleados y menú. Trabajé en la parte Frontend del equipo, donde utilizamos React.",
+    "marketDescription": "Tienda online de tecnología gamer desarrollada para Market on Demand S.A. E-commerce completo con catálogo de productos, carrito de compras, múltiples medios de pago y envíos a todo el país.",
+    "vestaDescription": "Tienda online de cerámicas artesanales desarrollada para Vesta Elemento. E-commerce con colecciones de edición limitada, sistema de stock y gestión de pedidos.",
+    "macasaDescription": "Sitio web institucional para MACASA Desarrollos, empresa argentina de viviendas industrializadas con el sistema INBUILD. Desarrollado con Next.js, presenta modelos de viviendas, tecnología constructiva y formulario de contacto.",
+    "visit": "Visitar Sitio"
+  },
+  "contact": {
+    "h1": "Contáctame",
+    "label": "Contacto",
+    "intro": "Estoy disponible para nuevos proyectos y oportunidades laborales. No dudes en contactarme.",
+    "resume": "Descargar CV",
+    "subject": "Asunto",
+    "body": "Deje su mensaje aquí...",
+    "send": "Enviar",
+    "swalTitle": "Enviado correctamente!",
+    "errorRequired": "Este campo es obligatorio",
+    "errorEmail": "Ingrese un email válido",
+    "minLengthEmail": "El mínimo de caracteres es 5",
+    "maxLengthEmail": "El máximo de caracteres es 50",
+    "minLengthSubject": "El mínimo de caracteres es 2",
+    "maxLengthSubject": "El máximo de caracteres es 25",
+    "minLengthBody": "El mínimo de caracteres es 10",
+    "maxLengthBody": "El máximo de caracteres es 300"
+  }
 }

@@ -1,158 +1,94 @@
-import { Tooltip } from "@material-tailwind/react";
 import { useTranslation } from "react-i18next";
+import tiendanubeIcon from "../images/tiendanube.png";
+
+const SKILLS = [
+  {
+    name: "HTML",
+    icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg",
+  },
+  {
+    name: "CSS",
+    icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg",
+  },
+  {
+    name: "JavaScript",
+    icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg",
+  },
+  {
+    name: "React",
+    icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg",
+  },
+  {
+    name: "Redux",
+    icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg",
+  },
+  {
+    name: "Tailwind",
+    icon: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg",
+  },
+  {
+    name: "Node.js",
+    icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg",
+  },
+  {
+    name: "Express",
+    icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg",
+    invert: true,
+  },
+  {
+    name: "PostgreSQL",
+    icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg",
+  },
+  {
+    name: "MongoDB",
+    icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg",
+  },
+  {
+    name: "Git",
+    icon: "https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg",
+  },
+  {
+    name: "Next.js",
+    icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg",
+  },
+  {
+    name: "Tiendanube",
+    icon: tiendanubeIcon,
+  },
+];
 
 export default function Skills() {
-    const [t] = useTranslation("global");
-    return (
-        <div id="skills" className=" w-full h-full pt-[5%] mt-[7%] ">
-            <h1 className="text-8xl text-center font-bold text-[#90a0d9]">
-                {t("skills.h1")}
-            </h1>
-            <div className="flex items-center justify-around gap-8 m-10 mt-20 ">
-                <Tooltip
-                    content="CSS"
-                    className="text-[#90a0d9] bg-[#202438] border-2 border-[#202438] rounded-full text-xl"
-                >
-                    <div className="rounded-full flex w-[6%] h-24 justify-center bg-[#90a0d9] ">
-                        <img
-                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg"
-                            alt="css3"
-                            width="80%"
-                            height="80%"
-                        />
-                    </div>
-                </Tooltip>
-                <Tooltip
-                    content="Express"
-                    className="text-[#90a0d9] bg-[#202438] border-2 border-[#202438] rounded-full text-xl"
-                >
-                    <div className="rounded-full flex w-[6%] h-24 justify-center bg-[#90a0d9] ">
-                        <img
-                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg"
-                            alt="express"
-                            width="80%"
-                            height="80%"
-                        />
-                    </div>
-                </Tooltip>
-                <Tooltip
-                    content="Git"
-                    className="text-[#90a0d9] bg-[#202438] border-2 border-[#202438] rounded-full text-xl"
-                >
-                    <div className="rounded-full flex w-[6%] h-24 justify-center bg-[#90a0d9] ">
-                        <img
-                            src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg"
-                            alt="git"
-                            width="80%"
-                            height="80%"
-                        />
-                    </div>
-                </Tooltip>
-                <Tooltip
-                    content="HTML"
-                    className="text-[#90a0d9] bg-[#202438] border-2 border-[#202438] rounded-full text-xl"
-                >
-                    <div className="rounded-full flex w-[6%] h-24 justify-center bg-[#90a0d9] ">
-                        <img
-                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg"
-                            alt="html5"
-                            width="80%"
-                            height="80%"
-                        />
-                    </div>
-                </Tooltip>
-                <Tooltip
-                    content="JavaScript"
-                    className="text-[#90a0d9] bg-[#202438] border-2 border-[#202438] rounded-full text-xl"
-                >
-                    <div className="rounded-full flex w-[6%] h-24 justify-center bg-[#90a0d9] ">
-                        <img
-                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
-                            alt="javascript"
-                            width="60%"
-                            height="60%"
-                        />
-                    </div>
-                </Tooltip>
-                <Tooltip
-                    content="NodeJS "
-                    className="text-[#90a0d9] bg-[#202438] border-2 border-[#202438] rounded-full text-xl"
-                >
-                    <div className="rounded-full flex w-[6%] h-24 justify-center bg-[#90a0d9] ">
-                        <img
-                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg"
-                            alt="nodejs"
-                            width="80"
-                            height="80"
-                        />
-                    </div>
-                </Tooltip>
-                <Tooltip
-                    content="PostgreSQL"
-                    className="text-[#90a0d9] bg-[#202438] border-2 border-[#202438] rounded-full text-xl"
-                >
-                    <div className="rounded-full flex w-[6%] h-24 justify-center bg-[#90a0d9] ">
-                        <img
-                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg"
-                            alt="postgresql"
-                            width="75%"
-                            height="75%"
-                        />
-                    </div>
-                </Tooltip>
-                <Tooltip
-                    content="React"
-                    className="text-[#90a0d9] bg-[#202438] border-2 border-[#202438] rounded-full text-xl"
-                >
-                    <div className="rounded-full flex w-[6%] h-24 justify-center bg-[#90a0d9] ">
-                        <img
-                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg"
-                            alt="react"
-                            width="80%"
-                            height="80%"
-                        />
-                    </div>
-                </Tooltip>
-                <Tooltip
-                    content="Redux"
-                    className="text-[#90a0d9] bg-[#202438] border-2 border-[#202438] rounded-full text-xl"
-                >
-                    <div className="rounded-full flex w-[6%] h-24 justify-center bg-[#90a0d9] ">
-                        <img
-                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg"
-                            alt="redux"
-                            width="80%"
-                            height="80%"
-                        />
-                    </div>
-                </Tooltip>
-                <Tooltip
-                    content="Tailwind"
-                    className="text-[#90a0d9] bg-[#202438] border-2 border-[#202438] rounded-full text-xl"
-                >
-                    <div className="rounded-full flex w-[6%] h-24 justify-center bg-[#90a0d9] ">
-                        <img
-                            src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg"
-                            alt="tailwind"
-                            width="80%"
-                            height="80%"
-                        />
-                    </div>
-                </Tooltip>
-                <Tooltip
-                    content="MongoDB"
-                    className="text-[#90a0d9] bg-[#202438] border-2 border-[#202438] rounded-full text-xl"
-                >
-                    <div className="rounded-full flex w-[6%] h-24 justify-center bg-[#90a0d9] ">
-                        <img
-                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg"
-                            alt="mongodb"
-                            width="80%"
-                            height="80%"
-                        />
-                    </div>
-                </Tooltip>
+  const [t] = useTranslation("global");
+
+  return (
+    <section id="skills" className="py-24">
+      <div className="max-w-5xl mx-auto px-6">
+        <p className="text-[#90a0d9] text-xs font-mono tracking-widest mb-3 uppercase">
+          {t("skills.label")}
+        </p>
+        <h2 className="text-2xl md:text-3xl font-bold text-white mb-12">
+          {t("skills.h1")}
+        </h2>
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
+          {SKILLS.map((skill) => (
+            <div
+              key={skill.name}
+              className="group flex flex-col items-center gap-3 p-4 bg-[#161b2e] border border-[#2d3555] rounded-xl hover:border-[#90a0d9]/50 hover:bg-[#1a2038] transition-all duration-300 cursor-default"
+            >
+              <img
+                src={skill.icon}
+                alt={skill.name}
+                className={`w-9 h-9 object-contain group-hover:scale-110 transition-transform duration-300 ${
+                  skill.invert ? "brightness-0 invert" : ""
+                }`}
+              />
+              <span className="text-xs text-[#8892b0] group-hover:text-[#90a0d9] transition-colors duration-300 font-medium text-center">
+                {skill.name}
+              </span>
             </div>
+          ))}
         </div>
-    );
+      </div>
+    </section>
+  );
 }

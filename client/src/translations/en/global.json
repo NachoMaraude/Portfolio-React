@@ -1,39 +1,51 @@
 {
-    "navBar": {
-        "about": "About Me",
-        "skills": "Skills",
-        "projects": "Projects",
-        "contact": "Contact Me"
-    },
-    "title": {
-        "h1": "Hi! I am Juan Ignacio",
-        "h2": "Full Stack Web Developer & Web Designer"
-    },
-    "about": {
-        "p": "I am a full stack developer with a focus on the front-end, I have had the opportunity to work in eCommerce and food industries, where I worked with different technologies that I learned autonomously, I am passionate about everything related to interface and user experience. I like to provide companies with scalable projects to generate customer engagement. Thanks to my experience in projects I have developed skills such as creativity, problem-solving skills, and assertive communication that have allowed me to perform appropriately in collaborative workspaces and individual projects. I am interested in continuing my professional development in the tech industry, particularly as a web developer."
-    },
-    "skills": {
-        "h1": "Skills"
-    },
-    "projects": {
-        "h1": "Projects",
-        "piDescription": "Henry Videogames is a web application that allows the user to visualize video games using the Rawg API, as well as their details (description, release date, genres, and platforms) and offers the possibility to add your own video games.",
-        "foodifyDescription": "Web application created to help restaurants to organize their tables, metrics, employees, and menu. I worked in the Frontend part of the team, where we used React."
-    },
-    "contact": {
-        "h1": "Contact Me",
-        "resume": "Download Resume",
-        "subject": "Subject",
-        "body": "Leave your message here...",
-        "send": "Send",
-        "swalTitle": "Submited successfully!",
-        "errorRequired": "This field is required",
-        "errorEmail": "Enter a valid email",
-        "minLengthEmail": "This field must be at least 5 characters",
-        "maxLengthEmail": "This field must be most at 50 characters",
-        "minLengthSubject": "This field must be at least 2 characters",
-        "maxLengthSubject": "This field must be most at 25 characters",
-        "minLengthBody": "This field must be at least 10 characters",
-        "maxLengthBody": "This field must be most at 300 characters"
-    }
+  "navBar": {
+    "about": "About Me",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact Me"
+  },
+  "title": {
+    "h1": "Hi! I am Juan Ignacio",
+    "h2": "Full Stack Web Developer & Web Designer",
+    "cta": "View Projects",
+    "contactBtn": "Contact Me"
+  },
+  "about": {
+    "label": "About Me",
+    "heading": "Full Stack Developer passionate about Frontend",
+    "p": "I am a full stack developer with a focus on the front-end, a graduate of the Henry intensive bootcamp, and currently studying Computer Engineering. I have had the opportunity to work in eCommerce and food industries, where I worked with different technologies that I learned autonomously. I am passionate about everything related to interface and user experience, and I like to provide companies with scalable projects to generate customer engagement. Thanks to my experience I have developed skills such as creativity, problem-solving, and assertive communication that allow me to perform both in collaborative teams and individual projects."
+  },
+  "skills": {
+    "h1": "Skills",
+    "label": "Stack"
+  },
+  "projects": {
+    "h1": "Projects",
+    "label": "Featured projects",
+    "piDescription": "Henry Videogames is a web application that allows the user to visualize video games using the Rawg API, as well as their details (description, release date, genres, and platforms) and offers the possibility to add your own video games.",
+    "foodifyDescription": "Web application created to help restaurants to organize their tables, metrics, employees, and menu. I worked in the Frontend part of the team, where we used React.",
+    "marketDescription": "Online gamer technology store developed for Market on Demand S.A. Full e-commerce with product catalog, shopping cart, multiple payment methods, and nationwide shipping.",
+    "vestaDescription": "Online handcrafted ceramics store developed for Vesta Elemento. E-commerce featuring limited edition collections, stock management, and order processing.",
+    "macasaDescription": "Institutional website for MACASA Desarrollos, an Argentine industrialized housing company featuring the INBUILD system. Built with Next.js, showcasing housing models, construction technology, and a contact form.",
+    "visit": "Visit Site"
+  },
+  "contact": {
+    "h1": "Contact Me",
+    "label": "Contact",
+    "intro": "I am available for new projects and job opportunities. Feel free to reach out.",
+    "resume": "Download Resume",
+    "subject": "Subject",
+    "body": "Leave your message here...",
+    "send": "Send",
+    "swalTitle": "Submited successfully!",
+    "errorRequired": "This field is required",
+    "errorEmail": "Enter a valid email",
+    "minLengthEmail": "This field must be at least 5 characters",
+    "maxLengthEmail": "This field must be most at 50 characters",
+    "minLengthSubject": "This field must be at least 2 characters",
+    "maxLengthSubject": "This field must be most at 25 characters",
+    "minLengthBody": "This field must be at least 10 characters",
+    "maxLengthBody": "This field must be most at 300 characters"
+  }
 }
