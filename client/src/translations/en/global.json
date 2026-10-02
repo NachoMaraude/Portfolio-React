@@ -6,15 +6,19 @@
     "contact": "Contact Me"
   },
   "title": {
-    "h1": "Hi! I am Juan Ignacio",
-    "h2": "Full Stack Web Developer & Web Designer",
+    "label": "Juan Ignacio Maraude",
+    "h1": "Frontend developer for e-commerce.",
+    "h2": "I build online stores and websites with React, Next.js and Tiendanube. I also manage Meta Ads and tracking, so I understand both the code and the numbers behind it.",
+    "availability": "Available for freelance projects",
     "cta": "View Projects",
     "contactBtn": "Contact Me"
   },
   "about": {
     "label": "About Me",
-    "heading": "Full Stack Developer passionate about Frontend",
-    "p": "I am a full stack developer with a focus on the front-end, a graduate of the Henry intensive bootcamp, and currently studying Computer Engineering. I have had the opportunity to work in eCommerce and food industries, where I worked with different technologies that I learned autonomously. I am passionate about everything related to interface and user experience, and I like to provide companies with scalable projects to generate customer engagement. Thanks to my experience I have developed skills such as creativity, problem-solving, and assertive communication that allow me to perform both in collaborative teams and individual projects."
+    "heading": "4 years building for the web, focused on e-commerce",
+    "p1": "I have 4 years of coding experience, focused on the frontend of online stores and websites. I work with React, Next.js and Tiendanube, and I have built e-commerce projects like Market on Demand and Vesta Elemento, plus the institutional site for MACASA Desarrollos.",
+    "p2": "I also work at a marketing agency, where for the past year I have been running Meta Ads campaigns for clients. That gives me a practical view of conversion and measurement, so I build pages with both in mind.",
+    "p3": "I graduated from the Henry bootcamp and am currently studying Computer Engineering. I am looking for freelance projects: online stores, landing pages, business websites and custom web systems."
   },
   "skills": {
     "h1": "Skills",
@@ -23,22 +27,70 @@
   "projects": {
     "h1": "Projects",
     "label": "Featured projects",
-    "piDescription": "Henry Videogames is a web application that allows the user to visualize video games using the Rawg API, as well as their details (description, release date, genres, and platforms) and offers the possibility to add your own video games.",
-    "foodifyDescription": "Web application created to help restaurants to organize their tables, metrics, employees, and menu. I worked in the Frontend part of the team, where we used React.",
-    "marketDescription": "Online gamer technology store developed for Market on Demand S.A. Full e-commerce with product catalog, shopping cart, multiple payment methods, and nationwide shipping.",
-    "vestaDescription": "Online handcrafted ceramics store developed for Vesta Elemento. E-commerce featuring limited edition collections, stock management, and order processing.",
-    "macasaDescription": "Institutional website for MACASA Desarrollos, an Argentine industrialized housing company featuring the INBUILD system. Built with Next.js, showcasing housing models, construction technology, and a contact form.",
-    "visit": "Visit Site"
+    "visit": "Visit Site",
+    "viewCase": "View full case",
+    "ctaText": "Need something like this for your business?",
+    "ctaButton": "Contact me",
+    "close": "Close",
+    "groups": {
+      "client": "Client work",
+      "bootcamp": "Bootcamp projects"
+    },
+    "caseLabels": {
+      "role": "My role",
+      "problem": "The client's problem",
+      "solution": "What I did",
+      "result": "Result"
+    },
+    "items": {
+      "market": {
+        "name": "Market on Demand",
+        "summary": "Gamer technology e-commerce for Market on Demand S.A.",
+        "role": "[PLACEHOLDER] Describe your role in this project.",
+        "problem": "[PLACEHOLDER] Describe the client's problem or goal.",
+        "solution": "Full online store with product catalog, shopping cart, multiple payment methods and nationwide shipping.",
+        "result": "[PLACEHOLDER] Add a measurable result (real data only)."
+      },
+      "vesta": {
+        "name": "Vesta Elemento",
+        "summary": "Handcrafted ceramics e-commerce for Vesta Elemento, with limited edition collections.",
+        "role": "[PLACEHOLDER] Describe your role in this project.",
+        "problem": "[PLACEHOLDER] Describe the client's problem or goal.",
+        "solution": "Online store with limited edition collections, stock management and order processing.",
+        "result": "[PLACEHOLDER] Add a measurable result (real data only)."
+      },
+      "macasa": {
+        "name": "MACASA Desarrollos",
+        "summary": "Institutional website for an Argentine industrialized housing company, built with Next.js.",
+        "role": "[PLACEHOLDER] Describe your role in this project.",
+        "problem": "[PLACEHOLDER] Describe the client's problem or goal.",
+        "solution": "Institutional website built with Next.js, showcasing housing models, the construction technology of the INBUILD system and a contact form.",
+        "result": "[PLACEHOLDER] Add a measurable result (real data only)."
+      },
+      "pi": {
+        "name": "Videogames APP",
+        "summary": "Web app to browse video games through the Rawg API, see their details and add your own."
+      },
+      "foodify": {
+        "name": "Foodify",
+        "summary": "Web app to help restaurants organize tables, metrics, employees and menu. I worked on the frontend with React."
+      }
+    }
   },
   "contact": {
     "h1": "Contact Me",
     "label": "Contact",
-    "intro": "I am available for new projects and job opportunities. Feel free to reach out.",
+    "intro": "Have a project in mind? I build online stores, landing pages and custom web systems. Tell me what you need and let's talk.",
+    "whatsapp": "Chat on WhatsApp",
+    "whatsappMessage": "Hi Juan, I saw your portfolio and I'd like to talk about a project.",
+    "sending": "Sending...",
+    "swalErrorTitle": "The message could not be sent",
+    "swalErrorText": "Please try again, or reach out via WhatsApp or email.",
     "resume": "Download Resume",
     "subject": "Subject",
     "body": "Leave your message here...",
     "send": "Send",
-    "swalTitle": "Submited successfully!",
+    "swalTitle": "Message sent!",
     "errorRequired": "This field is required",
     "errorEmail": "Enter a valid email",
     "minLengthEmail": "This field must be at least 5 characters",

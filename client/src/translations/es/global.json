@@ -6,15 +6,19 @@
     "contact": "Contáctame"
   },
   "title": {
-    "h1": "Hola! Soy Juan Ignacio",
-    "h2": "Desarrollador Web Full Stack y Diseñador Web",
+    "label": "Juan Ignacio Maraude",
+    "h1": "Desarrollador frontend para e-commerce.",
+    "h2": "Creo tiendas online y sitios web con React, Next.js y Tiendanube. También manejo Meta Ads y medición, así que entiendo tanto el código como los números detrás.",
+    "availability": "Disponible para proyectos freelance",
     "cta": "Ver Proyectos",
     "contactBtn": "Contáctame"
   },
   "about": {
     "label": "Sobre Mí",
-    "heading": "Desarrollador Full Stack apasionado por el Frontend",
-    "p": "Soy un desarrollador full stack con enfoque en el front-end, egresado del bootcamp intensivo de Henry, y actualmente cursando Ingeniería Informática. He tenido la posibilidad de trabajar en industrias del sector eCommerce y alimentos, donde utilicé distintas tecnologías que aprendí de manera autónoma. Me apasiona todo lo relacionado con interfaz y experiencia de usuario, y me gusta proveerle a las compañías proyectos escalables con los que puedan generar engagement para sus clientes. Gracias a mi experiencia he desarrollado habilidades como la creatividad, resolución de problemas y comunicación asertiva, que me permiten desenvolverme tanto en equipos colaborativos como en proyectos individuales."
+    "heading": "4 años desarrollando para la web, con foco en e-commerce",
+    "p1": "Tengo 4 años de experiencia programando, enfocado en el frontend de tiendas online y sitios web. Trabajo con React, Next.js y Tiendanube, y desarrollé proyectos de e-commerce como Market on Demand y Vesta Elemento, además del sitio institucional de MACASA Desarrollos.",
+    "p2": "También trabajo en una agencia de marketing, donde desde hace un año manejo campañas de Meta Ads para clientes. Eso me da una visión práctica de conversión y medición, y construyo las páginas pensando en ambas.",
+    "p3": "Egresé del bootcamp de Henry y actualmente curso Ingeniería Informática. Busco proyectos freelance: tiendas online, landings, sitios web para negocios y sistemas a medida."
   },
   "skills": {
     "h1": "Habilidades",
@@ -23,22 +27,70 @@
   "projects": {
     "h1": "Proyectos",
     "label": "Proyectos destacados",
-    "piDescription": "Henry Videogames es una aplicación web que permite al usuario visualizar videojuegos utilizando la API Rawg, así como sus detalles (descripción, fecha de lanzamiento, géneros y plataformas) y ofrece la posibilidad de añadir tus propios videojuegos.",
-    "foodifyDescription": "Aplicación web creada para ayudar a los restaurantes a organizar sus mesas, métricas, empleados y menú. Trabajé en la parte Frontend del equipo, donde utilizamos React.",
-    "marketDescription": "Tienda online de tecnología gamer desarrollada para Market on Demand S.A. E-commerce completo con catálogo de productos, carrito de compras, múltiples medios de pago y envíos a todo el país.",
-    "vestaDescription": "Tienda online de cerámicas artesanales desarrollada para Vesta Elemento. E-commerce con colecciones de edición limitada, sistema de stock y gestión de pedidos.",
-    "macasaDescription": "Sitio web institucional para MACASA Desarrollos, empresa argentina de viviendas industrializadas con el sistema INBUILD. Desarrollado con Next.js, presenta modelos de viviendas, tecnología constructiva y formulario de contacto.",
-    "visit": "Visitar Sitio"
+    "visit": "Visitar Sitio",
+    "viewCase": "Ver caso completo",
+    "ctaText": "¿Necesitas algo así para tu negocio?",
+    "ctaButton": "Contáctame",
+    "close": "Cerrar",
+    "groups": {
+      "client": "Trabajos reales",
+      "bootcamp": "Proyectos de bootcamp"
+    },
+    "caseLabels": {
+      "role": "Mi rol",
+      "problem": "El problema del cliente",
+      "solution": "Qué hice",
+      "result": "Resultado"
+    },
+    "items": {
+      "market": {
+        "name": "Market on Demand",
+        "summary": "E-commerce de tecnología gamer para Market on Demand S.A.",
+        "role": "[PLACEHOLDER] Describí tu rol en este proyecto.",
+        "problem": "[PLACEHOLDER] Describí el problema u objetivo del cliente.",
+        "solution": "Tienda online completa con catálogo de productos, carrito de compras, múltiples medios de pago y envíos a todo el país.",
+        "result": "[PLACEHOLDER] Agregá un resultado medible (solo datos reales)."
+      },
+      "vesta": {
+        "name": "Vesta Elemento",
+        "summary": "E-commerce de cerámicas artesanales para Vesta Elemento, con colecciones de edición limitada.",
+        "role": "[PLACEHOLDER] Describí tu rol en este proyecto.",
+        "problem": "[PLACEHOLDER] Describí el problema u objetivo del cliente.",
+        "solution": "Tienda online con colecciones de edición limitada, sistema de stock y gestión de pedidos.",
+        "result": "[PLACEHOLDER] Agregá un resultado medible (solo datos reales)."
+      },
+      "macasa": {
+        "name": "MACASA Desarrollos",
+        "summary": "Sitio institucional de una empresa argentina de viviendas industrializadas, desarrollado con Next.js.",
+        "role": "[PLACEHOLDER] Describí tu rol en este proyecto.",
+        "problem": "[PLACEHOLDER] Describí el problema u objetivo del cliente.",
+        "solution": "Sitio institucional desarrollado con Next.js que presenta modelos de viviendas, la tecnología constructiva del sistema INBUILD y un formulario de contacto.",
+        "result": "[PLACEHOLDER] Agregá un resultado medible (solo datos reales)."
+      },
+      "pi": {
+        "name": "Videogames APP",
+        "summary": "App web para explorar videojuegos con la API Rawg, ver sus detalles y añadir los tuyos."
+      },
+      "foodify": {
+        "name": "Foodify",
+        "summary": "App web para ayudar a restaurantes a organizar mesas, métricas, empleados y menú. Trabajé en el frontend con React."
+      }
+    }
   },
   "contact": {
     "h1": "Contáctame",
     "label": "Contacto",
-    "intro": "Estoy disponible para nuevos proyectos y oportunidades laborales. No dudes en contactarme.",
+    "intro": "¿Tienes un proyecto en mente? Desarrollo tiendas online, landings y sistemas web a medida. Cuéntame qué necesitas y hablemos.",
+    "whatsapp": "Escríbeme por WhatsApp",
+    "whatsappMessage": "Hola Juan, vi tu portfolio y me gustaría hablar sobre un proyecto.",
+    "sending": "Enviando...",
+    "swalErrorTitle": "No se pudo enviar el mensaje",
+    "swalErrorText": "Inténtalo de nuevo, o escríbeme por WhatsApp o email.",
     "resume": "Descargar CV",
     "subject": "Asunto",
     "body": "Deje su mensaje aquí...",
     "send": "Enviar",
-    "swalTitle": "Enviado correctamente!",
+    "swalTitle": "Mensaje enviado!",
     "errorRequired": "Este campo es obligatorio",
     "errorEmail": "Ingrese un email válido",
     "minLengthEmail": "El mínimo de caracteres es 5",

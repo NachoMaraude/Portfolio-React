@@ -24,9 +24,11 @@ export default function About() {
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-5">
               {t("about.heading")}
             </h2>
-            <p className="text-[#8892b0] text-base leading-relaxed">
-              {t("about.p")}
-            </p>
+            <div className="flex flex-col gap-4 text-[#8892b0] text-base leading-relaxed">
+              <p>{t("about.p1")}</p>
+              <p>{t("about.p2")}</p>
+              <p>{t("about.p3")}</p>
+            </div>
           </div>
         </div>
       </div>
