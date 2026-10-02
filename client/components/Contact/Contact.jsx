@@ -167,7 +167,9 @@ export default function Contact({ lang, dict }) {
                 autoComplete="email"
                 placeholder={t("contact.labelEmail")}
                 aria-invalid={errors?.email ? "true" : "false"}
-                aria-describedby={errors?.email ? "contact-email-error" : undefined}
+                aria-describedby={
+                  errors?.email ? "contact-email-error" : undefined
+                }
                 {...register("email", {
                   pattern:
                     /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
@@ -234,7 +236,9 @@ export default function Contact({ lang, dict }) {
                 className={`${inputClass} resize-none h-36`}
                 placeholder={t("contact.body")}
                 aria-invalid={errors?.body ? "true" : "false"}
-                aria-describedby={errors?.body ? "contact-body-error" : undefined}
+                aria-describedby={
+                  errors?.body ? "contact-body-error" : undefined
+                }
                 {...register("body", {
                   required: true,
                   minLength: 10,

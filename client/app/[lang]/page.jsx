@@ -37,7 +37,10 @@ export default async function Home({ params }) {
         type="application/ld+json"
         // Escapa "<" para que el JSON no pueda cerrar la etiqueta script.
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(personJsonLd(lang, dict)).replace(/</g, "\\u003c"),
+          __html: JSON.stringify(personJsonLd(lang, dict)).replace(
+            /</g,
+            "\\u003c",
+          ),
         }}
       />
       <ScrollToTopButton />
