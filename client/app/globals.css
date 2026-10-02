@@ -119,8 +119,8 @@ section[id] {
 @layer components {
   /* Elementos presionables: feedback inmediato al presionar. */
   .press {
-    transition-property: transform, color, background-color, border-color,
-      opacity;
+    transition-property:
+      transform, color, background-color, border-color, opacity;
     transition-duration: 160ms;
     transition-timing-function: var(--ease-snappy);
   }
