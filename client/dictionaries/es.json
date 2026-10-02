@@ -56,6 +56,14 @@
       "result": "Resultado"
     },
     "items": {
+      "mundoliterario": {
+        "name": "Mundo Literario",
+        "summary": "Librería que pasó de vender en Mercado Libre a tener su propia tienda en Tiendanube, con campañas en Meta Ads.",
+        "role": "Diseño y desarrollo de la web, y creación de campañas en Meta.",
+        "problem": "Vendían por Mercado Libre y pagaban muchos impuestos.",
+        "solution": "Migré el negocio a Tiendanube y Meta: diseñé y desarrollé la tienda online y creé las campañas de Meta Ads.",
+        "result": "[PLACEHOLDER] Agregá un resultado medible (solo datos reales)."
+      },
       "market": {
         "name": "Market on Demand",
         "summary": "E-commerce de tecnología gamer para Market on Demand S.A.",

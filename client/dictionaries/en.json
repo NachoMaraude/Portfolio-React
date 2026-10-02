@@ -56,6 +56,14 @@
       "result": "Result"
     },
     "items": {
+      "mundoliterario": {
+        "name": "Mundo Literario",
+        "summary": "Bookstore moved from Mercado Libre to its own Tiendanube store, backed by Meta Ads campaigns.",
+        "role": "Web design and development, and Meta Ads campaign creation.",
+        "problem": "They sold through Mercado Libre and paid a lot in taxes.",
+        "solution": "Migrated the business to Tiendanube and Meta: I designed and built the online store and created the Meta Ads campaigns.",
+        "result": "[PLACEHOLDER] Add a measurable result (real data only)."
+      },
       "market": {
         "name": "Market on Demand",
         "summary": "Gamer technology e-commerce for Market on Demand S.A.",

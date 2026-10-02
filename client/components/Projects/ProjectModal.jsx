@@ -102,7 +102,11 @@ export default function ProjectModal({ project, onClose, t }) {
                   name: t(`${key}.name`),
                 })}
                 sizes="(min-width: 672px) 672px, 100vw"
-                className="h-56 md:h-72 w-full object-cover"
+                className={`h-56 md:h-72 w-full ${
+                  project.imageFit === "contain"
+                    ? "object-contain bg-[#0d1117]"
+                    : "object-cover"
+                }`}
               />
             </div>
           ))}

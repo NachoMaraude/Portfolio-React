@@ -65,7 +65,11 @@ function ProjectCard({ project, onOpen, t }) {
                   name,
                 })}
                 sizes="(min-width: 1280px) 360px, (min-width: 768px) 50vw, 100vw"
-                className="h-48 w-full object-cover"
+                className={`h-48 w-full ${
+                  project.imageFit === "contain"
+                    ? "object-contain bg-[#0d1117]"
+                    : "object-cover"
+                }`}
               />
             </div>
           ))}
