@@ -14,14 +14,19 @@ export const viewport = { themeColor: "#0d1117" };
 export async function generateMetadata({ params }) {
   const { lang } = await params;
   if (!hasLocale(lang)) return {};
-  const { title, description } = getDictionary(lang).meta;
+  const { title, description, ogImageAlt } = getDictionary(lang).meta;
+  const ogImage = {
+    url: "/og-image.png",
+    width: 1200,
+    height: 630,
+    alt: ogImageAlt,
+  };
 
   return {
     metadataBase: new URL(getSiteUrl()),
     title,
     description,
     manifest: "/manifest.json",
-    icons: { icon: "/descarga2.png", apple: "/logo192.png" },
     alternates: {
       canonical: `/${lang}`,
       languages: { en: "/en", es: "/es", "x-default": "/en" },
@@ -31,7 +36,16 @@ export async function generateMetadata({ params }) {
       description,
       type: "website",
       url: `/${lang}`,
+      siteName: "Juan Ignacio Maraude",
       locale: lang === "es" ? "es_AR" : "en_US",
+      alternateLocale: lang === "es" ? ["en_US"] : ["es_AR"],
+      images: [ogImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [{ url: ogImage.url, alt: ogImageAlt }],
     },
   };
 }

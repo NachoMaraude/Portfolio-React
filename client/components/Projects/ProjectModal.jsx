@@ -11,6 +11,7 @@ const CASE_FIELDS = ["role", "problem", "solution", "result"];
 
 export default function ProjectModal({ project, onClose, t }) {
   const closeRef = useRef(null);
+  const dialogRef = useRef(null);
   const key = `projects.items.${project.id}`;
 
   const goToContact = () => {
@@ -23,8 +24,26 @@ export default function ProjectModal({ project, onClose, t }) {
   };
 
   useEffect(() => {
+    const opener = document.activeElement;
     const onKeyDown = (e) => {
-      if (e.key === "Escape") onClose();
+      if (e.key === "Escape") {
+        onClose();
+        return;
+      }
+      if (e.key !== "Tab") return;
+      // Mantiene el foco dentro del diálogo.
+      const focusable = dialogRef.current.querySelectorAll(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+      );
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
     };
     const previousOverflow = document.body.style.overflow;
     document.addEventListener("keydown", onKeyDown);
@@ -33,6 +52,7 @@ export default function ProjectModal({ project, onClose, t }) {
     return () => {
       document.removeEventListener("keydown", onKeyDown);
       document.body.style.overflow = previousOverflow;
+      opener?.focus?.({ preventScroll: true });
     };
   }, [onClose]);
 
@@ -42,6 +62,7 @@ export default function ProjectModal({ project, onClose, t }) {
       onClick={onClose}
     >
       <div
+        ref={dialogRef}
         role="dialog"
         aria-modal="true"
         aria-labelledby="project-modal-title"
@@ -64,14 +85,28 @@ export default function ProjectModal({ project, onClose, t }) {
           transitionTime={400}
           infiniteLoop
           showStatus={false}
+          showIndicators={false}
+          labels={{
+            leftArrow: t("projects.prevSlide"),
+            rightArrow: t("projects.nextSlide"),
+            item: t("projects.slideItem"),
+          }}
         >
           {project.images.map((img, i) => (
             <div key={i}>
               <Image
                 src={img}
-                alt={`${t(`${key}.name`)}-${i + 1}`}
+                alt={t("projects.screenshotAlt", {
+                  n: i + 1,
+                  total: project.images.length,
+                  name: t(`${key}.name`),
+                })}
                 sizes="(min-width: 672px) 672px, 100vw"
-                className="h-56 md:h-72 w-full object-cover"
+                className={`h-56 md:h-72 w-full ${
+                  project.imageFit === "contain"
+                    ? "object-contain bg-[#0d1117]"
+                    : "object-cover"
+                }`}
               />
             </div>
           ))}
@@ -89,7 +124,7 @@ export default function ProjectModal({ project, onClose, t }) {
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="text-xs text-[#90a0d9] bg-[#90a0d9]/10 border border-[#90a0d9]/20 px-2 py-0.5 rounded-full"
+                  className="text-sm text-[#90a0d9] bg-[#90a0d9]/10 border border-[#90a0d9]/20 px-2.5 py-0.5 rounded-full"
                 >
                   {tag}
                 </span>
@@ -99,10 +134,10 @@ export default function ProjectModal({ project, onClose, t }) {
 
           {CASE_FIELDS.map((field) => (
             <div key={field}>
-              <p className="text-[#90a0d9] text-xs font-mono tracking-widest mb-1.5 uppercase">
+              <p className="text-[#90a0d9] text-sm font-mono tracking-widest mb-1.5 uppercase">
                 {t(`projects.caseLabels.${field}`)}
               </p>
-              <p className="text-[#8892b0] text-sm leading-relaxed">
+              <p className="text-[#8892b0] text-base leading-relaxed">
                 {t(`${key}.${field}`)}
               </p>
             </div>
@@ -121,7 +156,7 @@ export default function ProjectModal({ project, onClose, t }) {
           )}
 
           <div className="flex flex-wrap items-center justify-between gap-3 pt-5 border-t border-[#2d3555]">
-            <p className="text-sm text-[#c4cde8]">{t("projects.ctaText")}</p>
+            <p className="text-base text-[#c4cde8]">{t("projects.ctaText")}</p>
             <button
               type="button"
               onClick={goToContact}

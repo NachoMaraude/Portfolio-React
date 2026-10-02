@@ -1,9 +1,12 @@
 {
   "meta": {
-    "title": "Juan Ignacio Maraude | Desarrollador frontend para e-commerce",
-    "description": "Desarrollador frontend enfocado en e-commerce. Creo tiendas online, landings y sistemas web a medida con React, Next.js y Tiendanube, y también manejo Meta Ads y medición."
+    "title": "Juan Ignacio Maraude | Desarrollo Web y E-commerce",
+    "description": "Desarrollador frontend enfocado en e-commerce. Creo tiendas online, landings y sistemas web a medida con React, Next.js y Tiendanube, y también manejo Meta Ads y medición.",
+    "ogImageAlt": "Juan Ignacio Maraude, desarrollo web y e-commerce",
+    "jobTitle": "Desarrollador frontend para e-commerce"
   },
   "navBar": {
+    "label": "Navegación principal",
     "about": "Sobre Mí",
     "skills": "Habilidades",
     "projects": "Proyectos",
@@ -19,6 +22,7 @@
   },
   "about": {
     "label": "Sobre Mí",
+    "photoAlt": "Retrato de Juan Ignacio Maraude, desarrollador web",
     "heading": "4 años desarrollando para la web, con foco en e-commerce",
     "p1": "Tengo 4 años de experiencia programando, enfocado en el frontend de tiendas online y sitios web. Trabajo con React, Next.js y Tiendanube, y desarrollé proyectos de e-commerce como Market on Demand y Vesta Elemento, además del sitio institucional de MACASA Desarrollos.",
     "p2": "También trabajo en una agencia de marketing, donde desde hace un año manejo campañas de Meta Ads para clientes. Eso me da una visión práctica de conversión y medición, y construyo las páginas pensando en ambas.",
@@ -26,6 +30,7 @@
   },
   "skills": {
     "h1": "Habilidades",
+    "logoAlt": "Logo de {name}",
     "label": "Stack"
   },
   "projects": {
@@ -33,6 +38,10 @@
     "label": "Proyectos destacados",
     "visit": "Visitar Sitio",
     "viewCase": "Ver caso completo",
+    "prevSlide": "Captura anterior",
+    "nextSlide": "Captura siguiente",
+    "slideItem": "Captura",
+    "screenshotAlt": "Captura {n} de {total} del proyecto {name}",
     "ctaText": "¿Necesitas algo así para tu negocio?",
     "ctaButton": "Contáctame",
     "close": "Cerrar",
@@ -47,6 +56,14 @@
       "result": "Resultado"
     },
     "items": {
+      "mundoliterario": {
+        "name": "Mundo Literario",
+        "summary": "Librería que pasó de vender en Mercado Libre a tener su propia tienda en Tiendanube, con campañas en Meta Ads.",
+        "role": "Diseño y desarrollo de la web, y creación de campañas en Meta.",
+        "problem": "Vendían por Mercado Libre y pagaban muchos impuestos.",
+        "solution": "Migré el negocio a Tiendanube y Meta: diseñé y desarrollé la tienda online y creé las campañas de Meta Ads.",
+        "result": "[PLACEHOLDER] Agregá un resultado medible (solo datos reales)."
+      },
       "market": {
         "name": "Market on Demand",
         "summary": "E-commerce de tecnología gamer para Market on Demand S.A.",
@@ -84,6 +101,8 @@
   "contact": {
     "h1": "Contáctame",
     "label": "Contacto",
+    "labelEmail": "Email",
+    "labelBody": "Mensaje",
     "intro": "¿Tienes un proyecto en mente? Desarrollo tiendas online, landings y sistemas web a medida. Cuéntame qué necesitas y hablemos.",
     "whatsapp": "Escríbeme por WhatsApp",
     "whatsappMessage": "Hola Juan, vi tu portfolio y me gustaría hablar sobre un proyecto.",

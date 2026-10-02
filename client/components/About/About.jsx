@@ -6,21 +6,22 @@ export default function About({ dict }) {
   const t = createT(dict);
   return (
     <section id="about" className="py-28">
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="max-w-5xl xl:max-w-6xl mx-auto px-6">
         <div className="flex flex-col md:flex-row gap-14 items-center">
           <div className="flex-shrink-0">
             <div className="relative">
               <div className="absolute -inset-2 rounded-full bg-[#90a0d9]/10 blur-lg" />
               <Image
                 src={image}
-                alt="Juan Ignacio Maraude"
+                alt={t("about.photoAlt")}
                 priority
+                sizes="176px"
                 className="relative w-44 h-44 rounded-full object-cover border-2 border-[#2d3555]"
               />
             </div>
           </div>
           <div>
-            <p className="text-[#90a0d9] text-xs font-mono tracking-widest mb-3 uppercase">
+            <p className="text-[#90a0d9] text-sm font-mono tracking-widest mb-3 uppercase">
               {t("about.label")}
             </p>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-5">

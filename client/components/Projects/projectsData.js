@@ -25,9 +25,25 @@ import threeMacasa from "../images/macasa/three.png";
 import fourMacasa from "../images/macasa/four.png";
 import fiveMacasa from "../images/macasa/five.png";
 import sixMacasa from "../images/macasa/six.png";
+import oneMundo from "../images/mundoliterario/one.png";
+import twoMundo from "../images/mundoliterario/two.png";
+import threeMundo from "../images/mundoliterario/three.png";
+import fourMundo from "../images/mundoliterario/four.png";
+import fiveMundo from "../images/mundoliterario/five.png";
+import sixMundo from "../images/mundoliterario/six.png";
 
 // El orden del array es el orden en pantalla; los textos viven en global.json (projects.items.<id>).
+// imageFit "contain" es para capturas verticales (mobile) que no deben recortarse.
 export const PROJECTS = [
+  {
+    id: "mundoliterario",
+    type: "client",
+    hasCase: true,
+    imageFit: "contain",
+    images: [oneMundo, twoMundo, threeMundo, fourMundo, fiveMundo, sixMundo],
+    tags: ["E-commerce", "Tiendanube", "Meta Ads"],
+    links: { site: "https://mundoliterarioml.com.ar/" },
+  },
   {
     id: "market",
     type: "client",

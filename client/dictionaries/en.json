@@ -1,9 +1,12 @@
 {
   "meta": {
-    "title": "Juan Ignacio Maraude | Frontend developer for e-commerce",
-    "description": "Frontend developer focused on e-commerce. I build online stores, landing pages and custom web systems with React, Next.js and Tiendanube, and I also manage Meta Ads and measurement."
+    "title": "Juan Ignacio Maraude | Web Development & E-commerce",
+    "description": "Frontend developer focused on e-commerce. I build online stores, landing pages and custom web systems with React, Next.js and Tiendanube, and I also manage Meta Ads and measurement.",
+    "ogImageAlt": "Juan Ignacio Maraude, web development and e-commerce",
+    "jobTitle": "Frontend developer for e-commerce"
   },
   "navBar": {
+    "label": "Main navigation",
     "about": "About Me",
     "skills": "Skills",
     "projects": "Projects",
@@ -19,6 +22,7 @@
   },
   "about": {
     "label": "About Me",
+    "photoAlt": "Portrait of Juan Ignacio Maraude, web developer",
     "heading": "4 years building for the web, focused on e-commerce",
     "p1": "I have 4 years of coding experience, focused on the frontend of online stores and websites. I work with React, Next.js and Tiendanube, and I have built e-commerce projects like Market on Demand and Vesta Elemento, plus the institutional site for MACASA Desarrollos.",
     "p2": "I also work at a marketing agency, where for the past year I have been running Meta Ads campaigns for clients. That gives me a practical view of conversion and measurement, so I build pages with both in mind.",
@@ -26,6 +30,7 @@
   },
   "skills": {
     "h1": "Skills",
+    "logoAlt": "{name} logo",
     "label": "Stack"
   },
   "projects": {
@@ -33,6 +38,10 @@
     "label": "Featured projects",
     "visit": "Visit Site",
     "viewCase": "View full case",
+    "prevSlide": "Previous screenshot",
+    "nextSlide": "Next screenshot",
+    "slideItem": "Screenshot",
+    "screenshotAlt": "Screenshot {n} of {total} of the {name} project",
     "ctaText": "Need something like this for your business?",
     "ctaButton": "Contact me",
     "close": "Close",
@@ -47,6 +56,14 @@
       "result": "Result"
     },
     "items": {
+      "mundoliterario": {
+        "name": "Mundo Literario",
+        "summary": "Bookstore moved from Mercado Libre to its own Tiendanube store, backed by Meta Ads campaigns.",
+        "role": "Web design and development, and Meta Ads campaign creation.",
+        "problem": "They sold through Mercado Libre and paid a lot in taxes.",
+        "solution": "Migrated the business to Tiendanube and Meta: I designed and built the online store and created the Meta Ads campaigns.",
+        "result": "[PLACEHOLDER] Add a measurable result (real data only)."
+      },
       "market": {
         "name": "Market on Demand",
         "summary": "Gamer technology e-commerce for Market on Demand S.A.",
@@ -84,6 +101,8 @@
   "contact": {
     "h1": "Contact Me",
     "label": "Contact",
+    "labelEmail": "Email",
+    "labelBody": "Message",
     "intro": "Have a project in mind? I build online stores, landing pages and custom web systems. Tell me what you need and let's talk.",
     "whatsapp": "Chat on WhatsApp",
     "whatsappMessage": "Hi Juan, I saw your portfolio and I'd like to talk about a project.",

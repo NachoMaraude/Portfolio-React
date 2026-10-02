@@ -45,3 +45,14 @@ html {
 .nav-active {
   color: #90a0d9 !important;
 }
+
+:focus-visible {
+  outline: 2px solid #90a0d9;
+  outline-offset: 2px;
+}
+
+.carousel .control-arrow:focus-visible {
+  opacity: 1;
+  outline: 2px solid #90a0d9;
+  outline-offset: -2px;
+}
