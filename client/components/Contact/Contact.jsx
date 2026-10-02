@@ -1,7 +1,6 @@
 "use client";
 
 import { useForm } from "react-hook-form";
-import swal from "sweetalert2";
 import { FaGithub, FaLinkedin, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 import { FiDownload } from "react-icons/fi";
 import { createT } from "@/lib/t";
@@ -24,28 +23,31 @@ export default function Contact({ lang, dict }) {
     reset,
   } = useForm();
 
-  const swalTheme = {
-    background: "#161b2e",
-    color: "#c4cde8",
-    confirmButtonColor: "#90a0d9",
+  const showAlert = async (options) => {
+    // sweetalert2 solo se descarga cuando hay que mostrar un aviso.
+    const { default: swal } = await import("sweetalert2");
+    swal.fire({
+      background: "#161b2e",
+      color: "#c4cde8",
+      confirmButtonColor: "#90a0d9",
+      ...options,
+    });
   };
 
   const onSubmit = async (data) => {
     try {
       await sendContact(data);
       reset({ email: "", subject: "", body: "" });
-      swal.fire({
+      showAlert({
         title: t("contact.swalTitle"),
         icon: "success",
         allowEscapeKey: true,
-        ...swalTheme,
       });
     } catch (error) {
-      swal.fire({
+      showAlert({
         title: t("contact.swalErrorTitle"),
         text: t("contact.swalErrorText"),
         icon: "error",
-        ...swalTheme,
       });
     }
   };
@@ -73,12 +75,12 @@ export default function Contact({ lang, dict }) {
   ];
 
   const inputClass =
-    "w-full bg-[#161b2e] border border-[#2d3555] rounded-lg text-sm text-[#c4cde8] placeholder-[#4a5568] px-4 py-3 focus:outline-none focus:border-[#90a0d9]/60 transition-colors duration-200";
+    "w-full bg-[#161b2e] border border-[#5b6a9a] rounded-lg text-base text-[#c4cde8] placeholder-[#8892b0] px-4 py-3 focus:border-[#90a0d9] transition-colors duration-200";
 
   return (
     <section id="contact" className="py-24 pb-32">
-      <div className="max-w-5xl mx-auto px-6">
-        <p className="text-[#90a0d9] text-xs font-mono tracking-widest mb-3 uppercase">
+      <div className="max-w-5xl xl:max-w-6xl mx-auto px-6">
+        <p className="text-[#90a0d9] text-sm font-mono tracking-widest mb-3 uppercase">
           {t("contact.label")}
         </p>
         <h2 className="text-2xl md:text-3xl font-bold text-white mb-12">
@@ -140,8 +142,15 @@ export default function Contact({ lang, dict }) {
             className="flex flex-col gap-4"
           >
             <div>
+              <label htmlFor="contact-email" className="sr-only">
+                {t("contact.labelEmail")}
+              </label>
               {errors?.email && (
-                <p className="text-xs text-red-400 mb-1.5">
+                <p
+                  id="contact-email-error"
+                  role="alert"
+                  className="text-sm text-red-400 mb-1.5"
+                >
                   {errors.email.type === "required"
                     ? t("contact.errorRequired")
                     : errors.email.type === "pattern"
@@ -152,10 +161,13 @@ export default function Contact({ lang, dict }) {
                 </p>
               )}
               <input
+                id="contact-email"
                 className={inputClass}
                 type="email"
                 autoComplete="email"
-                placeholder="Email"
+                placeholder={t("contact.labelEmail")}
+                aria-invalid={errors?.email ? "true" : "false"}
+                aria-describedby={errors?.email ? "contact-email-error" : undefined}
                 {...register("email", {
                   pattern:
                     /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
@@ -167,8 +179,15 @@ export default function Contact({ lang, dict }) {
             </div>
 
             <div>
+              <label htmlFor="contact-subject" className="sr-only">
+                {t("contact.subject")}
+              </label>
               {errors?.subject && (
-                <p className="text-xs text-red-400 mb-1.5">
+                <p
+                  id="contact-subject-error"
+                  role="alert"
+                  className="text-sm text-red-400 mb-1.5"
+                >
                   {errors.subject.type === "required"
                     ? t("contact.errorRequired")
                     : errors.subject.type === "minLength"
@@ -177,9 +196,14 @@ export default function Contact({ lang, dict }) {
                 </p>
               )}
               <input
+                id="contact-subject"
                 className={inputClass}
                 type="text"
                 placeholder={t("contact.subject")}
+                aria-invalid={errors?.subject ? "true" : "false"}
+                aria-describedby={
+                  errors?.subject ? "contact-subject-error" : undefined
+                }
                 {...register("subject", {
                   required: true,
                   minLength: 2,
@@ -189,8 +213,15 @@ export default function Contact({ lang, dict }) {
             </div>
 
             <div>
+              <label htmlFor="contact-body" className="sr-only">
+                {t("contact.labelBody")}
+              </label>
               {errors?.body && (
-                <p className="text-xs text-red-400 mb-1.5">
+                <p
+                  id="contact-body-error"
+                  role="alert"
+                  className="text-sm text-red-400 mb-1.5"
+                >
                   {errors.body.type === "required"
                     ? t("contact.errorRequired")
                     : errors.body.type === "minLength"
@@ -199,8 +230,11 @@ export default function Contact({ lang, dict }) {
                 </p>
               )}
               <textarea
+                id="contact-body"
                 className={`${inputClass} resize-none h-36`}
                 placeholder={t("contact.body")}
+                aria-invalid={errors?.body ? "true" : "false"}
+                aria-describedby={errors?.body ? "contact-body-error" : undefined}
                 {...register("body", {
                   required: true,
                   minLength: 10,

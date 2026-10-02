@@ -7,11 +7,11 @@ const STACK = ["React", "Next.js", "Tiendanube", "Meta Ads"];
 export default function Title({ dict }) {
   const t = createT(dict);
   return (
-    <section className="min-h-[80vh] flex flex-col items-center justify-center text-center pt-28 pb-16 relative">
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#90a0d9]/5 rounded-full blur-3xl pointer-events-none" />
+    <section className="min-h-[80vh] flex flex-col items-center justify-center text-center pt-28 pb-16 relative overflow-hidden">
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(144,160,217,0.08)_0%,rgba(144,160,217,0)_70%)] pointer-events-none" />
 
       <div className="relative z-10 max-w-3xl mx-auto px-6">
-        <p className="text-[#90a0d9] text-xs font-mono tracking-widest mb-5 uppercase">
+        <p className="text-[#90a0d9] text-sm font-mono tracking-widest mb-5 uppercase">
           {t("title.label")}
         </p>
         <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-5 leading-tight">
@@ -25,7 +25,7 @@ export default function Title({ dict }) {
           {STACK.map((item) => (
             <span
               key={item}
-              className="text-xs text-[#90a0d9] bg-[#90a0d9]/10 border border-[#90a0d9]/20 px-3 py-1 rounded-full"
+              className="text-sm text-[#90a0d9] bg-[#90a0d9]/10 border border-[#90a0d9]/20 px-3 py-1 rounded-full"
             >
               {item}
             </span>
@@ -51,7 +51,7 @@ export default function Title({ dict }) {
           </ScrollLink>
         </div>
 
-        <p className="flex items-center justify-center gap-2 text-xs text-[#8892b0] mb-6">
+        <p className="flex items-center justify-center gap-2 text-sm text-[#8892b0] mb-6">
           <span className="w-2 h-2 rounded-full bg-[#90a0d9] animate-pulse" />
           {t("title.availability")}
         </p>
@@ -61,17 +61,19 @@ export default function Title({ dict }) {
             href="https://github.com/NachoMaraude"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="GitHub"
             className="text-[#8892b0] hover:text-[#90a0d9] transition-colors duration-200"
           >
-            <FaGithub size={22} />
+            <FaGithub size={22} aria-hidden="true" />
           </a>
           <a
             href="https://www.linkedin.com/in/juan-ignacio-maraude-8a0694210/"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="LinkedIn"
             className="text-[#8892b0] hover:text-[#90a0d9] transition-colors duration-200"
           >
-            <FaLinkedin size={22} />
+            <FaLinkedin size={22} aria-hidden="true" />
           </a>
         </div>
       </div>

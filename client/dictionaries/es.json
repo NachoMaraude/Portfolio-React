@@ -6,6 +6,7 @@
     "jobTitle": "Desarrollador frontend para e-commerce"
   },
   "navBar": {
+    "label": "Navegación principal",
     "about": "Sobre Mí",
     "skills": "Habilidades",
     "projects": "Proyectos",
@@ -37,6 +38,9 @@
     "label": "Proyectos destacados",
     "visit": "Visitar Sitio",
     "viewCase": "Ver caso completo",
+    "prevSlide": "Captura anterior",
+    "nextSlide": "Captura siguiente",
+    "slideItem": "Captura",
     "screenshotAlt": "Captura {n} de {total} del proyecto {name}",
     "ctaText": "¿Necesitas algo así para tu negocio?",
     "ctaButton": "Contáctame",
@@ -89,6 +93,8 @@
   "contact": {
     "h1": "Contáctame",
     "label": "Contacto",
+    "labelEmail": "Email",
+    "labelBody": "Mensaje",
     "intro": "¿Tienes un proyecto en mente? Desarrollo tiendas online, landings y sistemas web a medida. Cuéntame qué necesitas y hablemos.",
     "whatsapp": "Escríbeme por WhatsApp",
     "whatsappMessage": "Hola Juan, vi tu portfolio y me gustaría hablar sobre un proyecto.",

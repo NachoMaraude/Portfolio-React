@@ -6,6 +6,7 @@
     "jobTitle": "Frontend developer for e-commerce"
   },
   "navBar": {
+    "label": "Main navigation",
     "about": "About Me",
     "skills": "Skills",
     "projects": "Projects",
@@ -37,6 +38,9 @@
     "label": "Featured projects",
     "visit": "Visit Site",
     "viewCase": "View full case",
+    "prevSlide": "Previous screenshot",
+    "nextSlide": "Next screenshot",
+    "slideItem": "Screenshot",
     "screenshotAlt": "Screenshot {n} of {total} of the {name} project",
     "ctaText": "Need something like this for your business?",
     "ctaButton": "Contact me",
@@ -89,6 +93,8 @@
   "contact": {
     "h1": "Contact Me",
     "label": "Contact",
+    "labelEmail": "Email",
+    "labelBody": "Message",
     "intro": "Have a project in mind? I build online stores, landing pages and custom web systems. Tell me what you need and let's talk.",
     "whatsapp": "Chat on WhatsApp",
     "whatsappMessage": "Hi Juan, I saw your portfolio and I'd like to talk about a project.",
