@@ -34,18 +34,18 @@ export default function Skills({ dict }) {
           {SKILLS.map((skill) => (
             <div
               key={skill.name}
-              className="group flex flex-col items-center gap-3 p-4 bg-[#161b2e] border border-[#2d3555] rounded-xl hover:border-[#90a0d9]/50 hover:bg-[#1a2038] transition-all duration-300 cursor-default"
+              className="group flex flex-col items-center gap-3 p-4 bg-[#161b2e] border border-[#2d3555] rounded-xl hover-fine:border-[#90a0d9]/50 hover-fine:bg-[#1a2038] transition-colors duration-300 cursor-default"
             >
               <Image
                 src={skill.icon}
-                alt={t("skills.logoAlt", { name: skill.name })}
+                alt=""
                 width={36}
                 height={36}
-                className={`w-9 h-9 object-contain group-hover:scale-110 transition-transform duration-300 ${
+                className={`w-9 h-9 object-contain motion-safe:group-hover-fine:scale-110 transition-transform duration-160 ease-snappy ${
                   skill.invert ? "brightness-0 invert" : ""
                 }`}
               />
-              <span className="text-sm text-[#8892b0] group-hover:text-[#90a0d9] transition-colors duration-300 font-medium text-center">
+              <span className="text-sm text-[#8892b0] group-hover-fine:text-[#90a0d9] transition-colors duration-300 font-medium text-center">
                 {skill.name}
               </span>
             </div>

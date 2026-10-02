@@ -7,6 +7,7 @@
   },
   "navBar": {
     "label": "Main navigation",
+    "backToTop": "Back to top",
     "about": "About Me",
     "skills": "Skills",
     "projects": "Projects",
@@ -30,7 +31,6 @@
   },
   "skills": {
     "h1": "Skills",
-    "logoAlt": "{name} logo",
     "label": "Stack"
   },
   "projects": {
@@ -40,7 +40,8 @@
     "viewCase": "View full case",
     "prevSlide": "Previous screenshot",
     "nextSlide": "Next screenshot",
-    "slideItem": "Screenshot",
+    "carouselLabel": "{name} screenshots",
+    "dotLabel": "Go to screenshot {n}",
     "screenshotAlt": "Screenshot {n} of {total} of the {name} project",
     "ctaText": "Need something like this for your business?",
     "ctaButton": "Contact me",
@@ -107,6 +108,8 @@
     "whatsapp": "Chat on WhatsApp",
     "whatsappMessage": "Hi Juan, I saw your portfolio and I'd like to talk about a project.",
     "sending": "Sending...",
+    "sent": "Sent",
+    "retry": "Try again",
     "swalErrorTitle": "The message could not be sent",
     "swalErrorText": "Please try again, or reach out via WhatsApp or email.",
     "resume": "Download Resume",

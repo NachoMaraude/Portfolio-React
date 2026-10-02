@@ -1,4 +1,4 @@
-import ScrollLink from "../ScrollLink";
+import HeroContent from "./HeroContent";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { createT } from "@/lib/t";
 
@@ -10,7 +10,7 @@ export default function Title({ dict }) {
     <section className="min-h-[80vh] flex flex-col items-center justify-center text-center pt-28 pb-16 relative overflow-hidden">
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(144,160,217,0.08)_0%,rgba(144,160,217,0)_70%)] pointer-events-none" />
 
-      <div className="relative z-10 max-w-3xl mx-auto px-6">
+      <HeroContent>
         <p className="text-[#90a0d9] text-sm font-mono tracking-widest mb-5 uppercase">
           {t("title.label")}
         </p>
@@ -33,22 +33,18 @@ export default function Title({ dict }) {
         </div>
 
         <div className="flex items-center justify-center gap-4 flex-wrap mb-6">
-          <ScrollLink
-            to="projects"
-            smooth
-            offset={-64}
-            className="cursor-pointer px-6 py-3 bg-[#90a0d9] text-[#0d1117] font-semibold rounded-lg hover:bg-[#7b8fd4] transition-colors duration-200 text-sm"
+          <a
+            href="#projects"
+            className="press px-6 py-3 bg-[#90a0d9] text-[#0d1117] font-semibold rounded-lg hover-fine:bg-[#7b8fd4] text-sm"
           >
             {t("title.cta")}
-          </ScrollLink>
-          <ScrollLink
-            to="contact"
-            smooth
-            offset={-64}
-            className="cursor-pointer px-6 py-3 border border-[#2d3555] text-[#c4cde8] font-semibold rounded-lg hover:border-[#90a0d9] hover:text-[#90a0d9] transition-all duration-200 text-sm"
+          </a>
+          <a
+            href="#contact"
+            className="press px-6 py-3 border border-[#2d3555] text-[#c4cde8] font-semibold rounded-lg hover-fine:border-[#90a0d9] hover-fine:text-[#90a0d9] text-sm"
           >
             {t("title.contactBtn")}
-          </ScrollLink>
+          </a>
         </div>
 
         <p className="flex items-center justify-center gap-2 text-sm text-[#8892b0] mb-6">
@@ -62,7 +58,7 @@ export default function Title({ dict }) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
-            className="text-[#8892b0] hover:text-[#90a0d9] transition-colors duration-200"
+            className="press text-[#8892b0] hover-fine:text-[#90a0d9]"
           >
             <FaGithub size={22} aria-hidden="true" />
           </a>
@@ -71,12 +67,12 @@ export default function Title({ dict }) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="text-[#8892b0] hover:text-[#90a0d9] transition-colors duration-200"
+            className="press text-[#8892b0] hover-fine:text-[#90a0d9]"
           >
             <FaLinkedin size={22} aria-hidden="true" />
           </a>
         </div>
-      </div>
+      </HeroContent>
     </section>
   );
 }

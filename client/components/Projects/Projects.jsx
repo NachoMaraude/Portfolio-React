@@ -1,12 +1,10 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import Image from "next/image";
 import dynamic from "next/dynamic";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { createT } from "@/lib/t";
+import SnapCarousel from "../SnapCarousel";
 import { PROJECTS } from "./projectsData";
 
 const ProjectModal = dynamic(() => import("./ProjectModal"));
@@ -27,7 +25,7 @@ function ProjectLink({ href, icon, label }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center gap-1.5 text-sm text-[#8892b0] hover:text-[#90a0d9] transition-colors duration-200"
+      className="flex items-center gap-1.5 text-sm text-[#8892b0] hover-fine:text-[#90a0d9] transition-colors duration-160 ease-snappy"
     >
       {icon}
       {label}
@@ -35,46 +33,32 @@ function ProjectLink({ href, icon, label }) {
   );
 }
 
-function ProjectCard({ project, onOpen, t }) {
+function ProjectCard({ project, onOpen, t, eagerFirst }) {
   const key = `projects.items.${project.id}`;
   const name = t(`${key}.name`);
 
   return (
-    <div className="flex flex-col bg-[#161b2e] border border-[#2d3555] rounded-2xl overflow-hidden hover:border-[#90a0d9]/40 transition-all duration-300">
-      <div className="h-48 overflow-hidden">
-        <Carousel
-          showArrows
-          showThumbs={false}
-          transitionTime={400}
-          infiniteLoop
-          showStatus={false}
-          showIndicators={false}
-          labels={{
-            leftArrow: t("projects.prevSlide"),
-            rightArrow: t("projects.nextSlide"),
-            item: t("projects.slideItem"),
-          }}
-        >
-          {project.images.map((img, i) => (
-            <div key={i}>
-              <Image
-                src={img}
-                alt={t("projects.screenshotAlt", {
-                  n: i + 1,
-                  total: project.images.length,
-                  name,
-                })}
-                sizes="(min-width: 1280px) 360px, (min-width: 768px) 50vw, 100vw"
-                className={`h-48 w-full ${
-                  project.imageFit === "contain"
-                    ? "object-contain bg-[#0d1117]"
-                    : "object-cover"
-                }`}
-              />
-            </div>
-          ))}
-        </Carousel>
-      </div>
+    <div className="flex flex-col bg-[#161b2e] border border-[#2d3555] rounded-2xl overflow-hidden hover-fine:border-[#90a0d9]/40 transition-colors duration-300">
+      <SnapCarousel
+        images={project.images}
+        heightClass="h-48"
+        fit={project.imageFit}
+        eagerFirst={eagerFirst}
+        sizes="(min-width: 1280px) 360px, (min-width: 768px) 50vw, 100vw"
+        getAlt={(i) =>
+          t("projects.screenshotAlt", {
+            n: i + 1,
+            total: project.images.length,
+            name,
+          })
+        }
+        labels={{
+          group: t("projects.carouselLabel", { name }),
+          prev: t("projects.prevSlide"),
+          next: t("projects.nextSlide"),
+          dot: (n) => t("projects.dotLabel", { n }),
+        }}
+      />
       <div className="p-5 flex flex-col flex-1">
         <h3 className="text-white font-bold text-lg mb-2">{name}</h3>
         <p className="text-[#8892b0] text-base leading-relaxed mb-4 flex-1">
@@ -90,7 +74,7 @@ function ProjectCard({ project, onOpen, t }) {
             <button
               type="button"
               onClick={() => onOpen(project)}
-              className="text-sm font-semibold text-[#90a0d9] hover:text-[#7b8fd4] transition-colors duration-200"
+              className="press text-sm font-semibold text-[#90a0d9] hover-fine:text-[#7b8fd4]"
             >
               {t("projects.viewCase")}
             </button>
@@ -142,6 +126,7 @@ export default function Projects({ dict }) {
                   project={project}
                   onOpen={setSelected}
                   t={t}
+                  eagerFirst={project.id === PROJECTS[0].id}
                 />
               ))}
             </div>

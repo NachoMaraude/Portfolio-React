@@ -43,7 +43,7 @@ export default async function Home({ params }) {
           ),
         }}
       />
-      <ScrollToTopButton />
+      <ScrollToTopButton label={dict.navBar.backToTop} />
       <NavBar lang={lang} dict={{ navBar: dict.navBar }} />
       <Title dict={dict} />
       <About dict={dict} />

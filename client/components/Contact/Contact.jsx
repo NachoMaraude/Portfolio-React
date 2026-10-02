@@ -1,8 +1,9 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaGithub, FaLinkedin, FaEnvelope, FaWhatsapp } from "react-icons/fa";
-import { FiDownload } from "react-icons/fi";
+import { FiAlertCircle, FiCheck, FiDownload } from "react-icons/fi";
 import { createT } from "@/lib/t";
 import { sendContact } from "@/lib/sendContact";
 
@@ -11,46 +12,57 @@ const RESUMES = {
   en: "/cv/Juan-Ignacio-Maraude-Resume.pdf",
   es: "/cv/Juan-Ignacio-Maraude-CV.pdf",
 };
+const STATUS_RESET_MS = 4000;
+
+const SEND_BUTTON_STYLES = {
+  idle: "bg-[#90a0d9] border-transparent text-[#0d1117] hover-fine:bg-[#7b8fd4]",
+  sending:
+    "bg-[#90a0d9] border-transparent text-[#0d1117] opacity-60 cursor-not-allowed",
+  sent: "bg-[#90a0d9]/15 border-[#90a0d9]/50 text-[#90a0d9]",
+  error: "bg-red-400/15 border-red-400/50 text-red-300",
+};
 
 export default function Contact({ lang, dict }) {
   const t = createT(dict);
   const isEs = lang === "es";
+  const [status, setStatus] = useState("idle");
+  const resetTimer = useRef(null);
 
   const {
     handleSubmit,
     register,
-    formState: { errors, isSubmitting },
+    formState: { errors },
     reset,
   } = useForm();
 
-  const showAlert = async (options) => {
-    // sweetalert2 solo se descarga cuando hay que mostrar un aviso.
-    const { default: swal } = await import("sweetalert2");
-    swal.fire({
-      background: "#161b2e",
-      color: "#c4cde8",
-      confirmButtonColor: "#90a0d9",
-      ...options,
-    });
-  };
+  useEffect(() => () => clearTimeout(resetTimer.current), []);
 
   const onSubmit = async (data) => {
+    clearTimeout(resetTimer.current);
+    setStatus("sending");
     try {
       await sendContact(data);
       reset({ email: "", subject: "", body: "" });
-      showAlert({
-        title: t("contact.swalTitle"),
-        icon: "success",
-        allowEscapeKey: true,
-      });
+      setStatus("sent");
     } catch (error) {
-      showAlert({
-        title: t("contact.swalErrorTitle"),
-        text: t("contact.swalErrorText"),
-        icon: "error",
-      });
+      setStatus("error");
     }
+    resetTimer.current = setTimeout(() => setStatus("idle"), STATUS_RESET_MS);
   };
+
+  const sendLabel = {
+    idle: t("contact.send"),
+    sending: t("contact.sending"),
+    sent: t("contact.sent"),
+    error: t("contact.retry"),
+  }[status];
+
+  const statusMessage =
+    status === "sent"
+      ? t("contact.swalTitle")
+      : status === "error"
+        ? `${t("contact.swalErrorTitle")}. ${t("contact.swalErrorText")}`
+        : "";
 
   const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
     t("contact.whatsappMessage"),
@@ -75,7 +87,7 @@ export default function Contact({ lang, dict }) {
   ];
 
   const inputClass =
-    "w-full bg-[#161b2e] border border-[#5b6a9a] rounded-lg text-base text-[#c4cde8] placeholder-[#8892b0] px-4 py-3 focus:border-[#90a0d9] transition-colors duration-200";
+    "w-full bg-[#161b2e] border border-[#5b6a9a] rounded-lg text-base text-[#c4cde8] placeholder-[#8892b0] px-4 py-3 focus:border-[#90a0d9] transition-colors duration-160 ease-snappy";
 
   return (
     <section id="contact" className="py-24 pb-32">
@@ -98,7 +110,7 @@ export default function Contact({ lang, dict }) {
               href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 p-3 bg-[#90a0d9] text-[#0d1117] rounded-xl hover:bg-[#7b8fd4] transition-colors duration-200 text-sm font-semibold"
+              className="press flex items-center justify-center gap-2 p-3 bg-[#90a0d9] text-[#0d1117] rounded-xl hover-fine:bg-[#7b8fd4] text-sm font-semibold"
             >
               <FaWhatsapp size={18} />
               {t("contact.whatsapp")}
@@ -111,7 +123,7 @@ export default function Contact({ lang, dict }) {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-3 bg-[#161b2e] border border-[#2d3555] rounded-xl text-[#8892b0] hover:text-[#90a0d9] hover:border-[#90a0d9]/40 transition-all duration-200 text-sm font-medium"
+                  className="press flex items-center gap-3 p-3 bg-[#161b2e] border border-[#2d3555] rounded-xl text-[#8892b0] hover-fine:text-[#90a0d9] hover-fine:border-[#90a0d9]/40 text-sm font-medium"
                 >
                   {link.icon}
                   {link.label}
@@ -128,7 +140,7 @@ export default function Contact({ lang, dict }) {
               }
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 p-3 bg-[#90a0d9]/10 border border-[#90a0d9]/30 rounded-xl text-[#90a0d9] hover:bg-[#90a0d9]/20 transition-all duration-200 text-sm font-semibold"
+              className="press flex items-center justify-center gap-2 p-3 bg-[#90a0d9]/10 border border-[#90a0d9]/30 rounded-xl text-[#90a0d9] hover-fine:bg-[#90a0d9]/20 text-sm font-semibold"
             >
               <FiDownload size={17} />
               {t("contact.resume")}
@@ -249,11 +261,35 @@ export default function Contact({ lang, dict }) {
 
             <button
               type="submit"
-              disabled={isSubmitting}
-              className="w-full py-3 bg-[#90a0d9] text-[#0d1117] font-semibold rounded-lg hover:bg-[#7b8fd4] transition-colors duration-200 text-sm disabled:opacity-60 disabled:cursor-not-allowed"
+              disabled={status === "sending"}
+              aria-busy={status === "sending"}
+              className={`press w-full py-3 border font-semibold rounded-lg text-sm ${SEND_BUTTON_STYLES[status]}`}
             >
-              {isSubmitting ? t("contact.sending") : t("contact.send")}
+              <span
+                key={status}
+                className="fade-in inline-flex items-center justify-center gap-2"
+              >
+                {status === "sent" && <FiCheck size={16} aria-hidden="true" />}
+                {status === "error" && (
+                  <FiAlertCircle size={16} aria-hidden="true" />
+                )}
+                {sendLabel}
+              </span>
             </button>
+
+            <p role="status" aria-live="polite" className="sr-only">
+              {statusMessage}
+            </p>
+            {statusMessage && (
+              <p
+                aria-hidden="true"
+                className={`fade-in text-sm ${
+                  status === "error" ? "text-red-300" : "text-[#90a0d9]"
+                }`}
+              >
+                {statusMessage}
+              </p>
+            )}
           </form>
         </div>
       </div>

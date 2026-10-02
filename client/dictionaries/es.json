@@ -7,6 +7,7 @@
   },
   "navBar": {
     "label": "Navegación principal",
+    "backToTop": "Volver arriba",
     "about": "Sobre Mí",
     "skills": "Habilidades",
     "projects": "Proyectos",
@@ -30,7 +31,6 @@
   },
   "skills": {
     "h1": "Habilidades",
-    "logoAlt": "Logo de {name}",
     "label": "Stack"
   },
   "projects": {
@@ -40,7 +40,8 @@
     "viewCase": "Ver caso completo",
     "prevSlide": "Captura anterior",
     "nextSlide": "Captura siguiente",
-    "slideItem": "Captura",
+    "carouselLabel": "Capturas de {name}",
+    "dotLabel": "Ir a la captura {n}",
     "screenshotAlt": "Captura {n} de {total} del proyecto {name}",
     "ctaText": "¿Necesitas algo así para tu negocio?",
     "ctaButton": "Contáctame",
@@ -107,6 +108,8 @@
     "whatsapp": "Escríbeme por WhatsApp",
     "whatsappMessage": "Hola Juan, vi tu portfolio y me gustaría hablar sobre un proyecto.",
     "sending": "Enviando...",
+    "sent": "Enviado",
+    "retry": "Reintentar",
     "swalErrorTitle": "No se pudo enviar el mensaje",
     "swalErrorText": "Inténtalo de nuevo, o escríbeme por WhatsApp o email.",
     "resume": "Descargar CV",

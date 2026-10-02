@@ -1,11 +1,32 @@
 "use client";
 
-import { Link } from "react-scroll";
+import { useEffect, useState } from "react";
 import NextLink from "next/link";
 import { createT } from "@/lib/t";
 
+const SECTIONS = ["about", "skills", "projects", "contact"];
+
 export default function NavBar({ lang, dict }) {
   const t = createT(dict);
+  const [active, setActive] = useState("");
+
+  useEffect(() => {
+    const sections = SECTIONS.map((id) => document.getElementById(id)).filter(
+      Boolean,
+    );
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const id = entry.target.id;
+          if (entry.isIntersecting) setActive(id);
+          else setActive((current) => (current === id ? "" : current));
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px" },
+    );
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <nav
@@ -24,19 +45,17 @@ export default function NavBar({ lang, dict }) {
         </NextLink>
 
         <div className="hidden sm:flex items-center gap-8">
-          {["about", "skills", "projects", "contact"].map((section) => (
-            <Link
+          {SECTIONS.map((section) => (
+            <a
               key={section}
-              to={section}
               href={`#${section}`}
-              spy
-              smooth
-              offset={-64}
-              activeClass="nav-active"
-              className="text-[#8892b0] hover:text-[#90a0d9] transition-colors duration-200 text-sm font-medium cursor-pointer tracking-wide"
+              aria-current={active === section ? "location" : undefined}
+              className={`text-sm font-medium tracking-wide transition-colors duration-160 ease-snappy hover-fine:text-[#90a0d9] ${
+                active === section ? "text-[#90a0d9]" : "text-[#8892b0]"
+              }`}
             >
               {t(`navBar.${section}`)}
-            </Link>
+            </a>
           ))}
         </div>
 
@@ -50,10 +69,10 @@ export default function NavBar({ lang, dict }) {
               lang={code}
               aria-label={code === "en" ? "English (EN)" : "Español (ES)"}
               aria-current={lang === code ? "true" : undefined}
-              className={`px-3 py-1 rounded-full text-sm font-semibold transition-all duration-200 ${
+              className={`press px-3 py-1 rounded-full text-sm font-semibold ${
                 lang === code
                   ? "bg-[#90a0d9] text-[#0d1117]"
-                  : "text-[#8892b0] hover:text-[#c4cde8]"
+                  : "text-[#8892b0] hover-fine:text-[#c4cde8]"
               }`}
             >
               {code.toUpperCase()}

@@ -1,172 +1,158 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import Image from "next/image";
-import { Carousel } from "react-responsive-carousel";
+import { useCallback, useEffect, useRef } from "react";
 import { FiX } from "react-icons/fi";
 import { FaExternalLinkAlt } from "react-icons/fa";
-import { scroller } from "react-scroll";
+import SnapCarousel from "../SnapCarousel";
+import { prefersReducedMotion } from "@/lib/motion";
 
 const CASE_FIELDS = ["role", "problem", "solution", "result"];
+const EXIT_MS = 150;
 
 export default function ProjectModal({ project, onClose, t }) {
-  const closeRef = useRef(null);
   const dialogRef = useRef(null);
+  const closingRef = useRef(false);
   const key = `projects.items.${project.id}`;
+  const name = t(`${key}.name`);
 
-  const goToContact = () => {
-    onClose();
-    // Espera a que el modal desmonte y libere el scroll del body.
-    setTimeout(
-      () => scroller.scrollTo("contact", { smooth: true, offset: -64 }),
-      0,
-    );
-  };
+  const requestClose = useCallback(
+    (after) => {
+      const dialog = dialogRef.current;
+      if (!dialog || closingRef.current) return;
+      closingRef.current = true;
+      dialog.setAttribute("data-closing", "");
+      setTimeout(() => {
+        dialog.close();
+        onClose();
+        after?.();
+      }, EXIT_MS);
+    },
+    [onClose],
+  );
 
   useEffect(() => {
-    const opener = document.activeElement;
-    const onKeyDown = (e) => {
-      if (e.key === "Escape") {
-        onClose();
-        return;
-      }
-      if (e.key !== "Tab") return;
-      // Mantiene el foco dentro del diálogo.
-      const focusable = dialogRef.current.querySelectorAll(
-        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
-      );
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
-      if (e.shiftKey && document.activeElement === first) {
-        e.preventDefault();
-        last.focus();
-      } else if (!e.shiftKey && document.activeElement === last) {
-        e.preventDefault();
-        first.focus();
-      }
-    };
+    const dialog = dialogRef.current;
     const previousOverflow = document.body.style.overflow;
-    document.addEventListener("keydown", onKeyDown);
+    // showModal aporta focus trap, capa superior, fondo inerte y devolución del foco al cerrar.
+    dialog.showModal();
     document.body.style.overflow = "hidden";
-    closeRef.current?.focus();
-    return () => {
-      document.removeEventListener("keydown", onKeyDown);
-      document.body.style.overflow = previousOverflow;
-      opener?.focus?.({ preventScroll: true });
+    const onCancel = (e) => {
+      e.preventDefault();
+      requestClose();
     };
-  }, [onClose]);
+    dialog.addEventListener("cancel", onCancel);
+    return () => {
+      dialog.removeEventListener("cancel", onCancel);
+      document.body.style.overflow = previousOverflow;
+      if (dialog.open) dialog.close();
+    };
+  }, [requestClose]);
+
+  const goToContact = () =>
+    requestClose(() =>
+      document.getElementById("contact")?.scrollIntoView({
+        behavior: prefersReducedMotion() ? "auto" : "smooth",
+      }),
+    );
 
   return (
-    <div
-      className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
-      onClick={onClose}
+    <dialog
+      ref={dialogRef}
+      aria-labelledby="project-modal-title"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) requestClose();
+      }}
+      onKeyDown={(e) => {
+        if (e.key === "Escape") {
+          e.preventDefault();
+          requestClose();
+        }
+      }}
+      className="case-dialog m-auto w-[calc(100%-2rem)] max-w-2xl max-h-[90vh] overflow-y-auto p-0 bg-[#161b2e] text-[#c4cde8] border border-[#2d3555] rounded-2xl"
     >
-      <div
-        ref={dialogRef}
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="project-modal-title"
-        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-[#161b2e] border border-[#2d3555] rounded-2xl"
-        onClick={(e) => e.stopPropagation()}
+      <button
+        type="button"
+        onClick={() => requestClose()}
+        aria-label={t("projects.close")}
+        className="press absolute top-3 right-3 z-20 p-2 rounded-full bg-[#0d1117]/80 text-[#c4cde8] hover-fine:text-[#90a0d9]"
       >
-        <button
-          ref={closeRef}
-          type="button"
-          onClick={onClose}
-          aria-label={t("projects.close")}
-          className="absolute top-3 right-3 z-10 p-2 rounded-full bg-[#0d1117]/80 text-[#c4cde8] hover:text-[#90a0d9] transition-colors duration-200"
-        >
-          <FiX size={18} />
-        </button>
+        <FiX size={18} />
+      </button>
 
-        <Carousel
-          showArrows
-          showThumbs={false}
-          transitionTime={400}
-          infiniteLoop
-          showStatus={false}
-          showIndicators={false}
-          labels={{
-            leftArrow: t("projects.prevSlide"),
-            rightArrow: t("projects.nextSlide"),
-            item: t("projects.slideItem"),
-          }}
-        >
-          {project.images.map((img, i) => (
-            <div key={i}>
-              <Image
-                src={img}
-                alt={t("projects.screenshotAlt", {
-                  n: i + 1,
-                  total: project.images.length,
-                  name: t(`${key}.name`),
-                })}
-                sizes="(min-width: 672px) 672px, 100vw"
-                className={`h-56 md:h-72 w-full ${
-                  project.imageFit === "contain"
-                    ? "object-contain bg-[#0d1117]"
-                    : "object-cover"
-                }`}
-              />
-            </div>
-          ))}
-        </Carousel>
+      <SnapCarousel
+        images={project.images}
+        heightClass="h-56 md:h-72"
+        fit={project.imageFit}
+        sizes="(min-width: 672px) 672px, 100vw"
+        getAlt={(i) =>
+          t("projects.screenshotAlt", {
+            n: i + 1,
+            total: project.images.length,
+            name,
+          })
+        }
+        labels={{
+          group: t("projects.carouselLabel", { name }),
+          prev: t("projects.prevSlide"),
+          next: t("projects.nextSlide"),
+          dot: (n) => t("projects.dotLabel", { n }),
+        }}
+      />
 
-        <div className="p-6 flex flex-col gap-5">
-          <div>
-            <h3
-              id="project-modal-title"
-              className="text-white font-bold text-xl mb-3"
-            >
-              {t(`${key}.name`)}
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {project.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="text-sm text-[#90a0d9] bg-[#90a0d9]/10 border border-[#90a0d9]/20 px-2.5 py-0.5 rounded-full"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {CASE_FIELDS.map((field) => (
-            <div key={field}>
-              <p className="text-[#90a0d9] text-sm font-mono tracking-widest mb-1.5 uppercase">
-                {t(`projects.caseLabels.${field}`)}
-              </p>
-              <p className="text-[#8892b0] text-base leading-relaxed">
-                {t(`${key}.${field}`)}
-              </p>
-            </div>
-          ))}
-
-          {project.links.site && (
-            <a
-              href={project.links.site}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="self-start flex items-center gap-1.5 text-sm text-[#90a0d9] hover:text-[#7b8fd4] transition-colors duration-200"
-            >
-              <FaExternalLinkAlt size={12} />
-              {t("projects.visit")}
-            </a>
-          )}
-
-          <div className="flex flex-wrap items-center justify-between gap-3 pt-5 border-t border-[#2d3555]">
-            <p className="text-base text-[#c4cde8]">{t("projects.ctaText")}</p>
-            <button
-              type="button"
-              onClick={goToContact}
-              className="px-5 py-2.5 bg-[#90a0d9] text-[#0d1117] font-semibold rounded-lg hover:bg-[#7b8fd4] transition-colors duration-200 text-sm"
-            >
-              {t("projects.ctaButton")}
-            </button>
+      <div className="p-6 flex flex-col gap-5">
+        <div>
+          <h3
+            id="project-modal-title"
+            className="text-white font-bold text-xl mb-3"
+          >
+            {name}
+          </h3>
+          <div className="flex flex-wrap gap-2">
+            {project.tags.map((tag) => (
+              <span
+                key={tag}
+                className="text-sm text-[#90a0d9] bg-[#90a0d9]/10 border border-[#90a0d9]/20 px-2.5 py-0.5 rounded-full"
+              >
+                {tag}
+              </span>
+            ))}
           </div>
         </div>
+
+        {CASE_FIELDS.map((field) => (
+          <div key={field}>
+            <p className="text-[#90a0d9] text-sm font-mono tracking-widest mb-1.5 uppercase">
+              {t(`projects.caseLabels.${field}`)}
+            </p>
+            <p className="text-[#8892b0] text-base leading-relaxed">
+              {t(`${key}.${field}`)}
+            </p>
+          </div>
+        ))}
+
+        {project.links.site && (
+          <a
+            href={project.links.site}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="self-start flex items-center gap-1.5 text-sm text-[#90a0d9] hover-fine:text-[#7b8fd4] transition-colors duration-160 ease-snappy"
+          >
+            <FaExternalLinkAlt size={12} />
+            {t("projects.visit")}
+          </a>
+        )}
+
+        <div className="flex flex-wrap items-center justify-between gap-3 pt-5 border-t border-[#2d3555]">
+          <p className="text-base text-[#c4cde8]">{t("projects.ctaText")}</p>
+          <button
+            type="button"
+            onClick={goToContact}
+            className="press px-5 py-2.5 bg-[#90a0d9] text-[#0d1117] font-semibold rounded-lg hover-fine:bg-[#7b8fd4] text-sm"
+          >
+            {t("projects.ctaButton")}
+          </button>
+        </div>
       </div>
-    </div>
+    </dialog>
   );
 }
