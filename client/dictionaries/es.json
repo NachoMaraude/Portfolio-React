@@ -1,7 +1,9 @@
 {
   "meta": {
-    "title": "Juan Ignacio Maraude | Desarrollador frontend para e-commerce",
-    "description": "Desarrollador frontend enfocado en e-commerce. Creo tiendas online, landings y sistemas web a medida con React, Next.js y Tiendanube, y también manejo Meta Ads y medición."
+    "title": "Juan Ignacio Maraude | Desarrollo Web y E-commerce",
+    "description": "Desarrollador frontend enfocado en e-commerce. Creo tiendas online, landings y sistemas web a medida con React, Next.js y Tiendanube, y también manejo Meta Ads y medición.",
+    "ogImageAlt": "Juan Ignacio Maraude, desarrollo web y e-commerce",
+    "jobTitle": "Desarrollador frontend para e-commerce"
   },
   "navBar": {
     "about": "Sobre Mí",
@@ -19,6 +21,7 @@
   },
   "about": {
     "label": "Sobre Mí",
+    "photoAlt": "Retrato de Juan Ignacio Maraude, desarrollador web",
     "heading": "4 años desarrollando para la web, con foco en e-commerce",
     "p1": "Tengo 4 años de experiencia programando, enfocado en el frontend de tiendas online y sitios web. Trabajo con React, Next.js y Tiendanube, y desarrollé proyectos de e-commerce como Market on Demand y Vesta Elemento, además del sitio institucional de MACASA Desarrollos.",
     "p2": "También trabajo en una agencia de marketing, donde desde hace un año manejo campañas de Meta Ads para clientes. Eso me da una visión práctica de conversión y medición, y construyo las páginas pensando en ambas.",
@@ -26,6 +29,7 @@
   },
   "skills": {
     "h1": "Habilidades",
+    "logoAlt": "Logo de {name}",
     "label": "Stack"
   },
   "projects": {
@@ -33,6 +37,7 @@
     "label": "Proyectos destacados",
     "visit": "Visitar Sitio",
     "viewCase": "Ver caso completo",
+    "screenshotAlt": "Captura {n} de {total} del proyecto {name}",
     "ctaText": "¿Necesitas algo así para tu negocio?",
     "ctaButton": "Contáctame",
     "close": "Cerrar",

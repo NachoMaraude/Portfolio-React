@@ -13,7 +13,7 @@ export default function About({ dict }) {
               <div className="absolute -inset-2 rounded-full bg-[#90a0d9]/10 blur-lg" />
               <Image
                 src={image}
-                alt="Juan Ignacio Maraude"
+                alt={t("about.photoAlt")}
                 priority
                 className="relative w-44 h-44 rounded-full object-cover border-2 border-[#2d3555]"
               />

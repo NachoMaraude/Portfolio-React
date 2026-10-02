@@ -77,7 +77,7 @@ export default function Skills({ dict }) {
             >
               <img
                 src={skill.icon}
-                alt={skill.name}
+                alt={t("skills.logoAlt", { name: skill.name })}
                 className={`w-9 h-9 object-contain group-hover:scale-110 transition-transform duration-300 ${
                   skill.invert ? "brightness-0 invert" : ""
                 }`}

@@ -51,7 +51,11 @@ function ProjectCard({ project, onOpen, t }) {
             <div key={i}>
               <Image
                 src={img}
-                alt={`${name}-${i + 1}`}
+                alt={t("projects.screenshotAlt", {
+                  n: i + 1,
+                  total: project.images.length,
+                  name,
+                })}
                 sizes="(min-width: 1024px) 512px, (min-width: 768px) 50vw, 100vw"
                 className="h-48 w-full object-cover"
               />
@@ -133,7 +137,9 @@ export default function Projects({ dict }) {
         ))}
       </div>
 
-      {selected && <ProjectModal project={selected} onClose={closeModal} t={t} />}
+      {selected && (
+        <ProjectModal project={selected} onClose={closeModal} t={t} />
+      )}
     </section>
   );
 }

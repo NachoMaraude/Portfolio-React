@@ -69,7 +69,11 @@ export default function ProjectModal({ project, onClose, t }) {
             <div key={i}>
               <Image
                 src={img}
-                alt={`${t(`${key}.name`)}-${i + 1}`}
+                alt={t("projects.screenshotAlt", {
+                  n: i + 1,
+                  total: project.images.length,
+                  name: t(`${key}.name`),
+                })}
                 sizes="(min-width: 672px) 672px, 100vw"
                 className="h-56 md:h-72 w-full object-cover"
               />

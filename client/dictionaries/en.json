@@ -1,7 +1,9 @@
 {
   "meta": {
-    "title": "Juan Ignacio Maraude | Frontend developer for e-commerce",
-    "description": "Frontend developer focused on e-commerce. I build online stores, landing pages and custom web systems with React, Next.js and Tiendanube, and I also manage Meta Ads and measurement."
+    "title": "Juan Ignacio Maraude | Web Development & E-commerce",
+    "description": "Frontend developer focused on e-commerce. I build online stores, landing pages and custom web systems with React, Next.js and Tiendanube, and I also manage Meta Ads and measurement.",
+    "ogImageAlt": "Juan Ignacio Maraude, web development and e-commerce",
+    "jobTitle": "Frontend developer for e-commerce"
   },
   "navBar": {
     "about": "About Me",
@@ -19,6 +21,7 @@
   },
   "about": {
     "label": "About Me",
+    "photoAlt": "Portrait of Juan Ignacio Maraude, web developer",
     "heading": "4 years building for the web, focused on e-commerce",
     "p1": "I have 4 years of coding experience, focused on the frontend of online stores and websites. I work with React, Next.js and Tiendanube, and I have built e-commerce projects like Market on Demand and Vesta Elemento, plus the institutional site for MACASA Desarrollos.",
     "p2": "I also work at a marketing agency, where for the past year I have been running Meta Ads campaigns for clients. That gives me a practical view of conversion and measurement, so I build pages with both in mind.",
@@ -26,6 +29,7 @@
   },
   "skills": {
     "h1": "Skills",
+    "logoAlt": "{name} logo",
     "label": "Stack"
   },
   "projects": {
@@ -33,6 +37,7 @@
     "label": "Featured projects",
     "visit": "Visit Site",
     "viewCase": "View full case",
+    "screenshotAlt": "Screenshot {n} of {total} of the {name} project",
     "ctaText": "Need something like this for your business?",
     "ctaButton": "Contact me",
     "close": "Close",
